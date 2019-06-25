@@ -2,6 +2,10 @@
 
 include_once 'funcoes.php';
 
+date_default_timezone_set('America/Sao_Paulo');
+
+$data = date('Y-m-d');
+
 $tabela = $_GET['tb'];
 
 if($tabela == 'usuarios'){
@@ -96,6 +100,41 @@ if($tabela == 'usuarios'){
         echo "<script language='javascript' type='text/javascript'>alert('Nova Lotação: $nome - gravado com sucesso!');window.location.href='../form_lotacao.php';</script>";
     }else{
         echo "<script language='javascript' type='text/javascript'>alert('Erro de comunicação com o Banco de Dados!');window.location.href='../form_lotacao.php';</script>";
+    }
+}else if($tabela == 'evento'){
+    $data   = $_POST['data'];
+    $nome = $_POST['nome'];
+    $obs   = $_POST['obs'];
+    $d = ConverteData($data);
+
+    $gravar = exeBD("INSERT INTO `evento`(`EVE_ID`, `EVE_DATA`, `EVE_NOME`, `EVE_OBS`) VALUES (DEFAULT,'$data','$nome','$obs')");
+    
+    if($gravar != ''){
+        
+        $result = exeBD("SELECT * FROM `evento` WHERE `EVE_DATA` = '$data'");
+        $dados = mysqli_fetch_array($result);
+       
+        $id = $dados['EVE_ID'];
+    
+        echo "<script language='javascript' type='text/javascript'>alert('Novo Evento: $nome - gravado com sucesso!');window.location.href='../form_presenca.php?id=$id';</script>";
+    }else{
+        echo "<script language='javascript' type='text/javascript'>alert('Erro de comunicação $data com o Banco de Dados!');window.location.href='../form_evento.php';</script>";
+    }
+}else if($tabela == 'presenca'){
+
+    $socio = $_POST['cod'];
+
+    $result = exeBD("SELECT * FROM `evento` WHERE EVE_DATA LIKE '$data%'");
+    $dados = mysqli_fetch_array($result);
+
+    $evento = $dados['EVE_ID'];
+
+    $gravar = exeBD("INSERT INTO `$tabela` (`PRE_ID`,`PRE_EVE_ID`, `PRE_SOC_COD`) VALUES (DEFAULT,'$evento','$socio')");
+
+    if($gravar){
+        echo "<script language='javascript' type='text/javascript'>alert('Presença - gravado com sucesso!');window.location.href='../form_presenca.php';</script>";
+    }else{
+        echo "<script language='javascript' type='text/javascript'>alert('Erro de comunicação com o Banco de Dados!');window.location.href='../form_presenca.php';</script>";
     }
 }
 

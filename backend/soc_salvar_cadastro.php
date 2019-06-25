@@ -147,22 +147,8 @@ $select = exeBD("SELECT SOC_CPF FROM SOCIOSB WHERE SOC_COD = '$cod'");
 			// Faz o upload da imagem para seu respectivo caminho
 			move_uploaded_file($foto["tmp_name"], $caminho_imagem);
 			
-           /* Insere os dados no banco
-           $insert = exeBD("INSERT INTO sociosb (SOC_COD, SOC_DTCADASTRO, SOC_NOME, SOC_APELIDO, SOC_DTNASC, SOC_FOTO, 
-		   SOC_SEXO, SOC_NACION, SOC_EST_ESTCIV, SOC_NATURALID, SOC_UF_NATURAL, SOC_PAI, SOC_MAE, SOC_END, SOC_NUM, 
-		   SOC_BAIRRO, SOC_DIS_DISTRIT, SOC_CIDADE, SOC_UF, SOC_CEP, SOC_EMAIL, SOC_TEL, SOC_CEL, SOC_RG, SOC_RG_DTEXP, 
-		   SOC_UFRG, SOC_CPF, SOC_CTPS, SOC_CTPSSERIE, SOC_CTPSEXP, SOC_TITULO, SOC_TITZONA, SOC_TITSE, SOC_PROFISSAO, 
-		   SOC_NIVELFORM, SOC_MAT, SOC_INSTIT, SOC_CARGO, SOC_LOTACAO, SOC_CARG_LOTAC, SOC_SITUAC, SOC_PORT_ADMIS, 
-		   SOC_DTADMISSAO, SOC_PORT_APOS, SOC_DTAPOSENT, SOC_NUM_BENEF, SOC_DTBENEF, SOC_DTFALEC, SOC_OBS, SOC_GAVETA,
-		   SOC_PIS)
-           VALUES 
-		   ($cod,now(),'$nome','$apelido','$dtnasc','".$nome_imagem."','$sexo','$nascionalid','$estcivil',
-		   '$naturalid','$ufnatural','$pai','$mae','$end','$num','$bairro','$distrito','$cidade','$uf','$cep',
-		   '$email','$tel','$cel','$rg','$rgexp','$ufrg','$cpf','$ctps','$ctpsserie','$ctpsexp','$titulo','$titzona',
-		   '$titsecao','$profissao','$nivelform','$mat','$instit','$cargo','$lotacao','$cargolotac','$situac',
-		   '$portadmis','$dtadmissao','$portaposent','$dtaposent','$numbenef','$dtbenef','$dtfalec','$mensagem',
-		   '$gaveta','$pis')");*/
-
+           //Insere os dados no banco
+           
 		   $insert = exeBD("INSERT INTO `sociosb`(`SOC_COD`, `SOC_COD_ANT`, `SOC_DTCADASTRO`, `SOC_NOME`, `SOC_APELIDO`, `SOC_DTNASC`, `SOC_FOTO`, `SOC_SEXO`, `SOC_NACION`, 
 		   `SOC_EST_ESTCIV`, `SOC_NATURALID`, `SOC_UF_NATURAL`, `SOC_PAI`, `SOC_MAE`, `SOC_END`, `SOC_NUM`, `SOC_BAIRRO`, `SOC_DIS_DISTRIT`, `SOC_CIDADE`, 
 		   `SOC_UF`, `SOC_CEP`, `SOC_EMAIL`, `SOC_TEL`, `SOC_CEL`, `SOC_RG`, `SOC_RG_DTEXP`, `SOC_UFRG`, `SOC_CPF`, `SOC_CTPS`, `SOC_CTPSSERIE`, `SOC_CTPSEXP`, 
@@ -174,14 +160,7 @@ $select = exeBD("SELECT SOC_CPF FROM SOCIOSB WHERE SOC_COD = '$cod'");
 		   '$titsecao','$profissao','$nivelform','$mat','$instit','$cargo','$lotacao','$cargolotac','$situac',
 		   '$portadmis','$dtadmissao','$portaposent','$dtaposent','$numbenef','$dtbenef','$dtfalec','$mensagem','$gaveta','$pis')");
            
-           //exeBD("UPDATE SOCIOS SET SOC_RG=$rg, SOC_UFRG=$ufrg, SOC_CPF='$cpf', SOC_CTPS=$ctps, SOC_CTPSSERIE=$ctpsserie,SOC_CTPSEXP='$ctpsexp',
-           //SOC_TITULO=$titulo, SOC_TITZONA=$titzona, SOC_TITSE=$titsecao, SOC_PROFISSAO='$profissao' WHERE SOC_COD = $cod");
-           
-           //exeBD("UPDATE SOC_MAT='$mat', SOC_LOTACAO=$lotacao, SOC_CARG_LOTAC=$cargolotac, SOC_SITUAC=$situac, SOC_PORT_ADMIS='$portadmis',
-           //SOC_DTADMISSAO='$dtadmissao', SOC_PORT_APOS='$portaposent', SOC_DTAPOSENT='$dtaposent', SOC_NUM_BENEF='$numbenef', SOC_DTBENEF='$dtbenef',
-           //SOC_DTFALEC='$dtfalec', SOC_OBS='$mensagem'");
-
-		   if($insert)
+           if($insert)
 	       {
 			  echo"<script language='javascript' type='text/javascript'>alert('Socio cadastrado com sucesso!');window.location.href='soc_altera.php?paramet=SOC_COD&senha=$cod'</script>";
 		   }

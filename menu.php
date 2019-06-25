@@ -26,13 +26,17 @@
                       <li><a href="form_situacao.php">Situação</a></li>
                       <li><a href="form_instituicao.php">Instituição</a></li>
                       <li><a href="form_lotacao.php">Lotação</a></li>
-                      <li><a href="form_lotacao.php">Lista de Presença</a></li>
-                      
+                      <li><a>Eventos/Assembleias<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="form_evento.php">Novo Evento</a></li>
+                          <li><a href="form_presenca.php">Presença</a></li>
+                        </ul>
+                      </li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">Usuários</a></li>
+                      <li><a href="edit_usuarios.html">Usuários</a></li>
                       <li><a href="edit_socios.html">Sócios</a></li>
                       <li><a href="form_advanced.html">Cargos</a></li>
                       <li><a href="form_buttons.html">Bairros</a></li>
@@ -150,7 +154,6 @@
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
-
             </div>
             <!-- /sidebar menu -->
 
@@ -269,3 +272,4 @@
           </div>
         </div>
         <!-- /top navigation -->
+   
