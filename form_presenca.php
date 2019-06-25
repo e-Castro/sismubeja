@@ -7,12 +7,18 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $data = date('Y-m-d');
 
+$evento = 0;
+
 if($data){
   $result = exeBD("SELECT * FROM `evento` WHERE `EVE_DATA` = '$data'");
-  $evento = mysqli_fetch_array($result);
-  $d = $evento['EVE_NOME'];
-}else{
-    echo "<script language='javascript' type='text/javascript'>alert('Não existe evento lançado para a data atual '.$data.'!');;window.location.href='form_evento.php';</script>";
+  $row = mysqli_fetch_array($result);
+  if($row == false){
+    $d = 'Não existe evento lançado para a data atual!';
+  }else{
+    $evento = mysqli_fetch_array($result);
+    $d = $evento['EVE_NOME'];
+    $evento = 1;
+  }
 }
 ?>
 <!-- page content -->
@@ -40,6 +46,7 @@ if($data){
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
+      <?php if($evento == 1){ ?>
           <div class="row">
             <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Código do Sócio: </label>
@@ -47,6 +54,7 @@ if($data){
             </div>
             <br />
           </div>
+      <?php } ?>
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-9">
