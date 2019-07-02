@@ -8,10 +8,10 @@ function exeBD($query){
 }
 
 function exePDO($query){
-    $conexao = new PDO("pgsql:host=localhost;port=;dbname=sismubeja;user=root;password=");
-    $PDO = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=utf8', DB_USER, DB_PASS);
-  
-    return $PDO;
+   // PDO
+    $pdo = new PDO("mysql:host=localhost;dbname=id2289417_sism", 'root', '');
+     
+    return $pdo;
 }
 
 function reais($valor){
