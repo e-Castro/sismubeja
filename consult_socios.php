@@ -1,6 +1,20 @@
 <?php
 include_once 'header.php';
 include_once 'menu.php';
+include_once 'funcoes.php';
+
+$id = isset($_GET['id']) ? $_GET['id']: '';
+
+$dados = '';
+
+if($id == ''){
+  $consulta = exeBD("SELECT * FROM `sociosb` WHERE SOC_COD = 1");
+  $dados = mysqli_fetch_array($consulta);
+}else{
+  $consulta = exeBD("SELECT * FROM `sociosb` WHERE SOC_COD = $id");
+  $dados = mysqli_fetch_array($consulta);
+}
+
 ?>
 <!-- page content -->
 <form action="backend/soc_salvar_cadastro.php" method="POST" enctype="multipart/form-data">
@@ -43,28 +57,28 @@ include_once 'menu.php';
             <input type="file" name="foto">
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Foto:</label>
-              <img src="images/user.png" width="100%" height="100%" alt="Foto de exibição">
+              <img src="<?php echo 'images/'.$dados['SOC_FOTO']; ?>" width="100%" height="100%" alt="Foto de exibição">
             </div>
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label>Código:</label>
-              <input type="text" name="cod" class="form-control">
+              <input type="text" name="cod" value="<?php echo $dados['SOC_COD']; ?>" readonly="readonly" class="form-control">
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Nome:</label>
-              <input type="text" name="nome" class="form-control">
+              <input type="text" name="nome" value="<?php echo $dados['SOC_NOME']; ?>" class="form-control">
             </div>
 
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Data Nascimento:</label>
-              <input type="date" name="dtnasc" class="form-control">
+              <input type="date" name="dtnasc" value="<?php echo $dados['SOC_DTNASC']; ?>" class="form-control">
             </div>
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label for="heard">Sexo:</label>
               <select class="form-control" name="sex">
-                <option value="">...</option>
+                <option value="<?php echo $dados['SOC_SEXO'];?>"><?php echo $dados['SOC_SEXO'];?></option>
                 <option value="M">M</option>
                 <option value="F">F</option>
               </select>
@@ -72,12 +86,12 @@ include_once 'menu.php';
 
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>Nacionalidade:</label>
-              <input type="text" name="nacionalid" class="form-control">
+              <input type="text" name="nacionalid" value="<?php echo $dados['SOC_NACION']; ?>" class="form-control">
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Naturalidade:</label>
-              <input type="text" name="naturalid" class="form-control">
+              <input type="text" name="naturalid" value="<?php echo $dados['SOC_NATURALID']; ?>"class="form-control">
             </div>
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
@@ -94,22 +108,22 @@ include_once 'menu.php';
 
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>Estado Civil:</label>
-              <input type="text" name="estcivil" class="form-control">
+              <input type="text" name="estcivil" value="<?php echo $dados['SOC_EST_ESTCIV']; ?>" class="form-control">
             </div>
 
             <div class="col-md-7 col-sm-12 col-xs-12 form-group">
               <label>Apelido:</label>
-              <input type="text" name="apelido" class="form-control">
+              <input type="text" name="apelido" value="<?php echo $dados['SOC_APELIDO']; ?>" class="form-control">
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Pai:</label>
-              <input type="text" name="pai" class="form-control">
+              <input type="text" name="pai" value="<?php echo $dados['SOC_PAI']; ?>" class="form-control">
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Mãe:</label>
-              <input type="text" name="mae" class="form-control">
+              <input type="text" name="mae" value="<?php echo $dados['SOC_MAE']; ?>" class="form-control">
             </div>
           </div>
       </div>
@@ -135,17 +149,17 @@ include_once 'menu.php';
 
           <div class="col-md-7 col-sm-12 col-xs-12 form-group">
             <label>Logradouro:</label>
-            <input type="text" name="end" class="form-control">
+            <input type="text" name="end" value="<?php echo $dados['SOC_END']; ?>" class="form-control">
           </div>
 
           <div class="col-md-1 col-sm-12 col-xs-12 form-group">
             <label>Número:</label>
-            <input type="text" name="num" class="form-control">
+            <input type="text" name="num" value="<?php echo $dados['SOC_NUM']; ?>" class="form-control">
           </div>
 
           <div class="col-md-4 col-sm-12 col-xs-12 form-group">
             <label>Bairro:</label>
-            <input type="text" name="bairro" class="form-control">
+            <input type="text" name="bairro" value="<?php echo $dados['SOC_BAIRRO']; ?>" class="form-control">
           </div>
 
           <div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -162,7 +176,7 @@ include_once 'menu.php';
 
           <div class="col-md-4 col-sm-12 col-xs-12 form-group">
             <label>Cidade:</label>
-            <input type="text" name="cidade" class="form-control">
+            <input type="text" name="cidade" value="<?php echo $dados['SOC_CIDADE']; ?>" class="form-control">
           </div>
 
           <div class="col-md-2 col-sm-12 col-xs-12 form-group">

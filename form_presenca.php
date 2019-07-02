@@ -98,11 +98,12 @@ if ($data) {
               WHERE ev.EVE_DATA = '$data'
               ORDER BY soc.SOC_COD ASC;");
 
+          if($result == true){  
           while ($l = mysqli_fetch_array($result)) {
-            $cod = $l["cod"];
-            $id = $l["id"];
-            $nome = $l["nome"];
-            $cargo = $l["cargo"];
+            $cod = isset($l["cod"]) ? $l["cod"] : '';
+            $id = isset($l["id"]) ? $l["id"] : '';
+            $nome = isset($l["nome"]) ? $l["nome"] : '';
+            $cargo = isset($l["cargo"]) ? $l["cargo"] : '';
             ?>
               <div class="row">
                 <div class="col-xs-2 form-group">
@@ -120,7 +121,7 @@ if ($data) {
                   </a>
                 </div>
               </div>
-            <?php }?>
+            <?php }}?>
           </form>
       </div>
     </div>
