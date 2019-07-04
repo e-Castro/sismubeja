@@ -36,15 +36,15 @@
                   </li>
                   <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="edit_usuarios.html">Usuários</a></li>
-                      <li><a href="edit_socios.html">Sócios</a></li>
-                      <li><a href="form_advanced.html">Cargos</a></li>
-                      <li><a href="form_buttons.html">Bairros</a></li>
-                      <li><a href="form_buttons.html">Distritos</a></li>
-                      <li><a href="form_validation.html">Situação</a></li>
-                      <li><a href="form_wizards.html">Instituição</a></li>
-                      <li><a href="form_upload.html">Lotação</a></li>
-                      <li><a href="form_validation.html">Relatórios</a></li>
+                      <li><a href="consult_usuarios.php">Usuários</a></li>
+                      <li><a href="consult_socios.php">Sócios</a></li>
+                      <li><a href="form_advanced.php">Cargos</a></li>
+                      <li><a href="form_buttons.php">Bairros</a></li>
+                      <li><a href="form_buttons.php">Distritos</a></li>
+                      <li><a href="form_validation.php">Situação</a></li>
+                      <li><a href="form_wizards.php">Instituição</a></li>
+                      <li><a href="form_upload.php">Lotação</a></li>
+                      <li><a href="form_validation.php">Relatórios</a></li>
                       
                     </ul>
                   </li>
