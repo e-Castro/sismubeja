@@ -3,7 +3,7 @@ include_once 'header.php';
 include_once 'menu.php';
 include_once 'funcoes.php';
 
-$id = isset($_GET['id']) ? $_GET['id']: '';
+$id = isset($_GET['id']) ? $_GET['id']: '1';
 
 $dados = '';
 $foto = '';
@@ -15,6 +15,7 @@ if($id == ''){
   $consulta = exeBD("SELECT * FROM `sociosb` WHERE SOC_COD = $id");
   $dados = mysqli_fetch_array($consulta);
 //$foto = mysqli_fetch_object($consulta);
+$id = $dados['SOC_COD'];
 }
 
 ?>
@@ -29,6 +30,7 @@ if($id == ''){
 
       <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+        <a href="consult_socios.php?id=<?php echo $id = $id+1;?>"><i class="fa fa-chevron-left">anterior</i></a>
           <div class="input-group">
             <input type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
@@ -59,8 +61,21 @@ if($id == ''){
             <input type="file" name="foto">
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Foto:</label>
-              
-              <img src="fotos/<?php echo $dados['SOC_FOTO']; ?>" width="100%" height="100%" alt="Foto de exibição">
+
+              <?php 
+              $foto = $dados['SOC_FOTO'];
+
+              if($foto == ''){
+
+                echo "<img src='fotos/user.jpg' width='100%' height='100%' alt='Foto de exibição'>";
+
+              }else{
+
+                echo "<img src='fotos/$foto' width='100%' height='100%' alt='Foto de exibição'>";
+
+              }
+              ?>
+
             </div>
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
@@ -72,13 +87,13 @@ if($id == ''){
               <input type="text" name="cod_ant" value="<?php echo $dados['SOC_COD_ANT']; ?>" readonly="readonly" class="form-control">
             </div>
 
-            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-7 col-sm-12 col-xs-12 form-group">
               <label>Nome:</label>
               <input type="text" name="nome" value="<?php echo $dados['SOC_NOME']; ?>" class="form-control">
             </div>
 
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <label>Data Nascimento:</label>
+              <label>Nascimento:</label>
               <input type="date" name="dtnasc" value="<?php echo $dados['SOC_DTNASC']; ?>" class="form-control">
             </div>
 
@@ -96,7 +111,7 @@ if($id == ''){
               <input type="text" name="nacionalid" value="<?php echo $dados['SOC_NACION']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>Naturalidade:</label>
               <input type="text" name="naturalid" value="<?php echo $dados['SOC_NATURALID']; ?>"class="form-control">
             </div>
@@ -104,7 +119,7 @@ if($id == ''){
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label for="heard">UF:</label>
               <select class="form-control" name="uf">
-                 <option value="<?php echo $dados["SOC_UF_NATURAL"];?>"><?php echo $dados["SOC_UF_NATIRAL"];?></option>
+                 <option value="<?php echo $dados["SOC_UF_NATURAL"];?>"><?php echo $dados["SOC_UF_NATURAL"];?></option>
                  <?php
                  $resultado = exeBD("SELECT * FROM uf");
                  
@@ -119,17 +134,17 @@ if($id == ''){
               <input type="text" name="estcivil" value="<?php echo $dados['SOC_EST_ESTCIV']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-7 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Apelido:</label>
               <input type="text" name="apelido" value="<?php echo $dados['SOC_APELIDO']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Pai:</label>
               <input type="text" name="pai" value="<?php echo $dados['SOC_PAI']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Mãe:</label>
               <input type="text" name="mae" value="<?php echo $dados['SOC_MAE']; ?>" class="form-control">
             </div>
@@ -334,12 +349,19 @@ if($id == ''){
                  $f = $dados['SOC_NIVELFORM'];
                  $form="-";
                  $resultForm = exeBD("SELECT * FROM formacao WHERE FOR_COD LIKE '$f'");
+                 if(mysqli_num_rows($resultForm) < 1) {
+                  $form; ?>
+                  
+                 <option value="<?php echo $form; ?>"><?php echo $form; ?></option>
+
+                 <?php }else{
+
 
                  while($form = mysqli_fetch_array($resultForm)) { ?>
 
                  <option value="<?php echo $form["FOR_COD"]; ?>"><?php echo $form["FOR_NOME"]; ?></option>
 
-                 <?php }                 
+                 <?php }  }               
                  $resultado = exeBD("SELECT * FROM formacao");
                  
                  while($form = mysqli_fetch_array($resultado)) { ?>
