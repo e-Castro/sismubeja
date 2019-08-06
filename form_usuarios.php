@@ -74,7 +74,7 @@ include_once 'menu.php';
           </div>
         <div class="ln_solid"></div>
           <div class="form-group">
-            <div class="col-md-4 col-sm-12 col-xs-12 col-md-offset-9">
+            <div class="col-md-4 col-sm-12 col-xs-12">
               <button type="button" class="btn btn-primary">Cancelar</button>
               <button type="reset" class="btn btn-primary">Limpar</button>
               <button type="submit" class="btn btn-success">Gravar</button>

@@ -39,12 +39,12 @@ include_once 'menu.php';
       </div>
       <div class="x_content">
           <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12">
               <label>Bairro:</label>
               <input type="text" name="nome" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12">
               <label>Obs:</label>
               <input type="text" name="obs" class="form-control">
             </div>
@@ -52,7 +52,7 @@ include_once 'menu.php';
           </div>
           <div class="ln_solid"></div>
           <div class="form-group">
-            <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-9">
+            <div class="col-md-6 col-sm-6 col-xs-12">
               <button type="button" class="btn btn-primary">Cancelar</button>
               <button type="reset" class="btn btn-primary">Limpar</button>
               <button type="submit" class="btn btn-success">Gravar</button>
