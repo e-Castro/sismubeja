@@ -38,13 +38,13 @@
                     <ul class="nav child_menu">
                       <li><a href="consult_usuarios.php">Usuários</a></li>
                       <li><a href="consult_socios.php">Sócios</a></li>
-                      <li><a href="form_advanced.php">Cargos</a></li>
-                      <li><a href="form_buttons.php">Bairros</a></li>
-                      <li><a href="form_buttons.php">Distritos</a></li>
-                      <li><a href="form_validation.php">Situação</a></li>
-                      <li><a href="form_wizards.php">Instituição</a></li>
-                      <li><a href="form_upload.php">Lotação</a></li>
-                      <li><a href="form_validation.php">Relatórios</a></li>
+                      <li><a href="consult_cargos.php">Cargos</a></li>
+                      <li><a href="consult_bairros.php">Bairros</a></li>
+                      <li><a href="consult_distritos.php">Distritos</a></li>
+                      <li><a href="consult_situacao.php">Situação</a></li>
+                      <li><a href="consult_instituicao.php">Instituição</a></li>
+                      <li><a href="consult_lotacao.php">Lotação</a></li>
+                      <li><a href="consult_relatorios.php">Relatórios</a></li>
                       
                     </ul>
                   </li>

@@ -58,11 +58,10 @@ if ($data) {
             </div>
             <div class="ln_solid"></div>
             <div class="form-group">
-              <div class="col-md-6 col-sm-12 col-xs-12">
-                <button type="button" class="btn btn-primary">Cancelar</button>
-                <button type="reset" class="btn btn-primary">Limpar</button>
-                <button type="submit" class="btn btn-success">Gravar</button>
-              </div>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <button type="reset" class="btn btn-success"><i class="fa fa-eraser"></i> Limpar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar</button>
+            </div>
             </div>
           <?php } ?>
         </div>
@@ -117,7 +116,7 @@ if ($data) {
                 </div>
                 <div class="col-xs-2 form-group">
                   <a href="backend/confirmar_excluir.php?tabela=presenca&dado=<?php echo $cod; ?>">
-                    <button type="button" class="btn btn-primary">Cancelar presença</button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> Cancelar</button>
                   </a>
                 </div>
               </div>

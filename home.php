@@ -1,40 +1,62 @@
 <?php
 include_once 'header.php';
 include_once 'menu.php';
+include_once 'backend/funcoes.php';
+
+$result = exeBD("SELECT * FROM sociosb ORDER BY SOC_NOME ASC");
+/*----------TOTAL----------*/
+$dados = mysqli_fetch_array($result);
+$total = mysqli_num_rows($result);
+/*----------ATIVOS---------*/
+$ativos = exeBD("SELECT * FROM sociosb WHERE SOC_SITUAC LIKE 1");
+$ativost = mysqli_num_rows($ativos);
+/*----------APOSET/PENSIONISTA----------*/
+$apos = exeBD("SELECT * FROM sociosb WHERE SOC_SITUAC LIKE 2 || SOC_SITUAC LIKE 7");
+$pen = mysqli_num_rows($apos);
+/*----------SEXO----------*/
+$feminino = exeBD("SELECT * FROM sociosb WHERE SOC_SEXO LIKE 'FEMININO'");
+$femt = mysqli_num_rows($feminino);
+
+$masculino = exeBD("SELECT * FROM sociosb WHERE SOC_SEXO LIKE 'MASCULINO'");
+$masct = mysqli_num_rows($masculino);
+/*----------CANCELADO/LICENC/AFASTAD/FALECIDO----------*/
+$cancelado = exeBD("SELECT * FROM sociosb WHERE SOC_SITUAC LIKE 3 || SOC_SITUAC LIKE 4 || SOC_SITUAC LIKE 5 || SOC_SITUAC LIKE 6");
+$desft = mysqli_num_rows($cancelado);
+
 ?>
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Sócios Filiados</span>
-              <div class="count">2535</div>
-              <span class="count_bottom"><i class="green">75 -</i> Filiados esse mês</span>
+              <span class="count_top"><i class="fa fa-users"></i> Total Cadastrados</span>
+              <div class="count"><?php echo $total; ?></div>
+              <span class="count_bottom"><i class="green">100% -</i> dos cadastros</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Sócios Ativos</span>
-              <div class="count">2115</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>80% </i> da última semana</span>
+              <div class="count"><?php echo $ativost; ?></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$ativost)/$total)*(-100)+100),2,',',''); ?>% </i> ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Sócios Aposentados</span>
-              <div class="count green">420</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>20% </i> da última semana</span>
+              <div class="count"><?php echo $pen; ?></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$pen)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Sócios Mulheres</span>
-              <div class="count">1534</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>68% </i> da última semana</span>
+              <span class="count_top"><i class="fa fa-female"></i> Sócios Mulheres</span>
+              <div class="count"><?php echo $femt; ?></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$femt)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Sócios Homens</span>
-              <div class="count">901</div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>32% </i> da última semmana</span>
+              <span class="count_top"><i class="fa fa-male"></i> Sócios Homens</span>
+              <div class="count"><?php echo $masct; ?></div>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$masct)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Desfiliados</span>
-              <div class="count">22</div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>1,3% </i> nos última 6 meses</span>
+              <div class="count"><?php echo $desft; ?></div>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
           </div>
           <!-- /top tiles -->

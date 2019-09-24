@@ -53,9 +53,9 @@ include_once 'menu.php';
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <button type="button" class="btn btn-primary">Cancelar</button>
-              <button type="reset" class="btn btn-primary">Limpar</button>
-              <button type="submit" class="btn btn-success">Gravar</button>
+              <button type="button" class="btn btn-danger"><i class="fa fa-close"></i> Cancelar</button>
+              <button type="reset" class="btn btn-success"><i class="fa fa-eraser"></i> Limpar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar</button>
             </div>
           </div>
       </div>

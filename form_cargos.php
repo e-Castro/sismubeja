@@ -3,14 +3,14 @@ include_once 'header.php';
 include_once 'menu.php';
 ?>
 <!-- page content -->
-<form action="backend/gravar.php?tb=cargos" method="POST" >
+
 <div class="right_col" role="main">
   <div class="">
     <div class="page-title">
       <div class="title_left">
         <h2>Cadastro Novo Cargo</h2>
       </div>
-
+      <form action="backend/gravar.php?tb=cargos" method="POST" >
       <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
           <div class="input-group">
@@ -21,8 +21,9 @@ include_once 'menu.php';
           </div>
         </div>
       </div>
+      </form>
     </div>
-
+    <form action="backend/gravar.php?tb=cargos" method="POST">
     <div class="x_panel">
       <div class="x_title">
         <h2>Cargo</h2>
@@ -59,16 +60,16 @@ include_once 'menu.php';
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <button type="button" class="btn btn-primary">Cancelar</button>
-              <button type="reset" class="btn btn-primary">Limpar</button>
-              <button type="submit" class="btn btn-success">Gravar</button>
+              <button type="reset" class="btn btn-success"><i class="fa fa-eraser"></i> Limpar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar</button>
             </div>
           </div>
       </div>
     </div>
+    </form>
   </div>
 </div>
-</form>
+
   <!-- /page content -->
   <?php
   include_once 'footer.php';

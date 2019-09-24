@@ -1,11 +1,17 @@
 <?php
 
 function exeBD($query){
-       $con = mysqli_connect("localhost","root","","id2289417_sism") or die("0;<center><br>Banco de dados indispon�vel.</center>");
-       $ar = mysqli_query($con,$query);
-	   return $ar;
-       mysqli_close($con);
+   $con = mysqli_connect("localhost","root","","sismubeja") or die("0;<center><br>Banco de dados indisponível.</center>");
+   $ar = mysqli_query($con,$query);
+  return $ar;
+   mysqli_close($con);
 }
+/*function exeBD($query){
+   $con = mysqli_connect("localhost","u247783955_ecast","Qwe15123002$","u247783955_ecast") or die("0;<center><br>Banco de dados indisponível.</center>");
+   $ar = mysqli_query($con,$query);
+  return $ar;
+   mysqli_close($con);
+}*/
 
 function exePDO($query){
    // PDO

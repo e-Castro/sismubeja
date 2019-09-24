@@ -74,7 +74,7 @@ include_once 'menu.php';
 
                         $id    = $l["USU_COD"];
                         $nome  = $l["USU_LOGIN"];
-                        $tipo  = $l["nivelacesso"];
+                        $tipo  = $l["USU_TIPO"];
                         $login = $l["USU_SOC_COD"];
                         $senha = $l['USU_OBS'];
                 ?>
@@ -96,7 +96,7 @@ include_once 'menu.php';
                       </div>
                       
                       <div class="col-xs-2 form-group" style="padding-left: 3px;">
-                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i>Editar</a>
+                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i> Editar</a>
                         <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a>
                       </div>
                     </div>  
