@@ -1,6 +1,7 @@
 <?php
 include_once 'header.php';
 include_once 'menu.php';
+include_once 'funcoes.php';
 ?>
 <!-- page content -->
 
@@ -85,20 +86,24 @@ include_once 'menu.php';
       <div class="x_content">
           <?php 
           $result = exeBD("SELECT * FROM cargos ORDER BY CAR_NOME ASC");
-          while($d = mysqli_fetch_array($result)){
+          while($l = mysqli_fetch_array($result)){
           ?>
           <div class="row">
 
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <input type="text" name="cbo" value="<?php echo $l['CAR_CBO']; ?>" class="form-control" readonly="readonly">
-            </div>
-
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <input type="text" name="cargo" class="form-control" readonly="readonly">
+            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+              <input type="text" name="cbo" value="<?php echo $l['CAR_COD']; ?>" class="form-control" readonly="readonly">
             </div>
 
             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-                <button type="button" class="btn btn-success"><i class="fa fa-pencil"></i> Editar</button>
+              <input type="text" name="cargo" value="<?php echo $l['CAR_NOME']; ?>"class="form-control" readonly="readonly">
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+              <input type="text" name="cargo" value="<?php echo $l['CAR_OBS']; ?>"class="form-control" readonly="readonly">
+            </div>
+
+            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+                <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> Editar</button>
             </div>
           </div>
           <?php } ?>
