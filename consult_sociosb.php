@@ -11,23 +11,34 @@ include_once 'funcoes.php';
       <div class="title_left">
         <h2>Cadastros</h2>
       </div>
-      <form action="backend/gravar.php?tb=cargos" method="POST" >
-      <div class="title_right">
-        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
+      <form action="consult_sociosb.php" method="GET">
+        <div class="title_right">
+          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">  
+              <input type="text" class="form-control" name="nome" placeholder="Localizar sócio...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Go!</button>
+              </span>
+            </div>
           </div>
         </div>
-      </div>
       </form>
     </div>
-   
+
+    <?php
+    
+        //GET com numero da nova pagina
+        $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
+        if($pagina == 0){
+          $pagina = 1;
+        }
+        $nome = (isset($_GET['nome'])) ? $_GET['nome'] : '';
+
+    ?>
+
     <div class="x_panel">
       <div class="x_title">
-        <h2>Sócios Cadastrados</h2>
+        <h2>Buscando por: <?php if($nome == ''){echo 'GERAL';}else{echo $nome;} ?></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -40,28 +51,57 @@ include_once 'funcoes.php';
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
+      <div class="row">
+        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+          <label>CÓD.</label>
+        </div>
 
-      <?php
-                        
-    //GET com numero da nova pagina
-    /*$pagina = (isset($_GET['agina'])) ? (int)$_GET['pagina'] : 1;*/
-    $pagina = $_GET['pagina'] + 1;
+        <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+          <label>NOME</label>
+        </div>
 
-    //numero de intens por paginação
-    $itens_por_pagina = 25;
-    $inicio = (($itens_por_pagina * $pagina) - $itens_por_pagina);
+        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+          <label>MATRÍCULA</label>
+        </div>
 
-    $resultado = exeBD("SELECT * FROM sociosb order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
-                        /*$num = mysqli_num_rows($resultado);*/
+        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+        <label>CPF</label>
+        </div>
 
-    $resultado_p = exeBD("SELECT * FROM sociosb order by SOC_NOME asc");
-    $num_total = mysqli_num_rows($resultado_p);
+        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+          <label>NASCIMENTO</label>
+        </div>
 
-    $num_paginas = ceil($num_total / $itens_por_pagina);
-    
-    $result = exeBD("SELECT * FROM sociosb ORDER BY SOC_NOME ASC");
-          while($l = mysqli_fetch_array($result)){
+        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+          
+        </div>
+      </div>
+
+        <?php
+
+        //numero de intens por paginação
+        $itens_por_pagina = 13;
+        $inicio = (($itens_por_pagina * $pagina) - $itens_por_pagina);
+
+        if($nome == ''){
+          $resultado = exeBD("SELECT * FROM sociosb order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
+          /*$num = mysqli_num_rows($resultado);*/
+
+          $resultado_p = exeBD("SELECT * FROM sociosb order by SOC_NOME asc");
+          $num_total = mysqli_num_rows($resultado_p);
+        }else{
+          $resultado = exeBD("SELECT * FROM sociosb WHERE SOC_NOME LIKE '%$nome%' order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
+          /*$num = mysqli_num_rows($resultado);*/
+
+          $resultado_p = exeBD("SELECT * FROM sociosb WHERE SOC_NOME LIKE '%$nome%' order by SOC_NOME asc");
+          $num_total = mysqli_num_rows($resultado_p);
+        }
+
+        $num_paginas = ceil($num_total / $itens_por_pagina);
+
+        while ($l = mysqli_fetch_array($resultado)) {
           ?>
+          
           <div class="row">
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
@@ -69,43 +109,58 @@ include_once 'funcoes.php';
             </div>
 
             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-              <input type="text" name="cargo" value="<?php echo $l['SOC_NOME']; ?>"class="form-control" readonly="readonly">
+              <input type="text" name="cargo" value="<?php echo $l['SOC_NOME']; ?>" class="form-control" readonly="readonly">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <input type="text" name="cargo" value="<?php echo $l['SOC_CPF']; ?>"class="form-control" readonly="readonly">
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <input type="text" name="cargo" value="<?php echo $l['SOC_MAT']; ?>" class="form-control" readonly="readonly">
+            </div>
+
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <input type="text" name="cargo" value="<?php echo $l['SOC_CPF']; ?>" class="form-control" readonly="readonly">
+            </div>
+
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <input type="text" name="cargo" value="<?php echo ConverteData($l['SOC_DTNASC']); ?>" class="form-control" readonly="readonly">
             </div>
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+              <a href="consult_socios.php?id=<?php echo $l['SOC_COD']; ?>">
                 <button type="button" class="btn btn-primary"><i class="fa fa-pencil"></i> Editar</button>
+              </a>
             </div>
           </div>
-          <?php } ?>
+        <?php } echo $pagina;?>
       </div>
-      <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                                        <ul class="pagination">
-                                            <li class="paginate_button previous" id="example2_previous">
-                                                <a href="alunos.php?pagina=0" aria-controls="example2">Primeira</a>
-                                            </li>
-                                            <?php for($i=0;$i<$num_paginas;$i++){
-                                                $estilo = "class=\"paginate_button\"";
-                                                if(($pagina-1) == $i)
-                                                    $estilo = "class=\"paginate_button active\"";
-                                                ?>
-                                                <li <?php echo $estilo; ?>>
-                                                    <a href="alunos.php?pagina=<?php echo $i; ?>" aria-controls="example2"><?php echo $i+1; ?></a>
-                                                </li>
-                                            <?php }?>
-                                            <li class="paginate_button next" id="example2_next">
-                                                <a href="alunos.php?pagina=<?php echo $num_paginas=$num_paginas-1;?>" aria-controls="example2">Ultima</a>
-                                            </li>
-                                        </ul>
-                                    </div>
+      <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
+        <ul class="pagination">
+          <li class="paginate_button previous" id="datatable_previous">
+            <a href="consult_sociosb.php?pagina=0&nome=<?php echo $nome; ?>" aria-controls="datatable">Primeira</a>
+          </li>
+          <?php for ($i = 1; $i < $num_paginas; $i++) {
+            $estilo = "class=\"paginate_button\"";
+            
+            if($pagina == $i){
+              $estilo = "class=\"paginate_button active\"";
+            }else{
+              $estilo = "class=\"paginate_button\"";
+            }
+              
+            ?>
+            <li <?php echo $estilo; ?>>
+              <a href="consult_sociosb.php?pagina=<?php echo $i; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable"><?php echo $i; ?></a>
+            </li>
+          <?php } ?>
+          <li class="paginate_button next" id="datatable_next">
+            <a href="consult_sociosb.php?pagina=<?php echo $num_paginas; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable">Ultima</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
-  <!-- /page content -->
-  <?php
-  include_once 'footer.php';
-  ?>
+<!-- /page content -->
+<?php
+include_once 'footer.php';
+?>

@@ -1,7 +1,8 @@
 <?php
+
 include_once 'header.php';
 include_once 'menu.php';
-include_once 'backend/funcoes.php';
+include_once 'funcoes.php';
 
 $result = exeBD("SELECT * FROM sociosb ORDER BY SOC_NOME ASC");
 /*----------TOTAL----------*/
@@ -56,7 +57,7 @@ $desft = mysqli_num_rows($cancelado);
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Desfiliados</span>
               <div class="count"><?php echo $desft; ?></div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
             </div>
           </div>
           <!-- /top tiles -->

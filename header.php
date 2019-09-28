@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+
+session_start();
+include_once 'funcoes.php';
+$usuario = $_SESSION['usuarioSession'];
+
+$result = exeBD("SELECT * FROM usuarios WHERE USU_LOGIN LIKE '$usuario'");
+$dados_user = mysqli_fetch_array($result);
+
+$codsoc = $dados_user['USU_SOC_COD'];
+$tipo = $dados_user['USU_TIPO'];
+
+?>
 <html lang="pt-br">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

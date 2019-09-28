@@ -37,7 +37,7 @@
                   <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="consult_usuarios.php">Usuários</a></li>
-                      <li><a href="consult_socios.php">Sócios</a></li>
+                      <li><a href="consult_sociosb.php">Sócios</a></li>
                       <li><a href="consult_cargos.php">Cargos</a></li>
                       <li><a href="consult_bairros.php">Bairros</a></li>
                       <li><a href="consult_distritos.php">Distritos</a></li>
@@ -80,10 +80,12 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-clone"></i>Eleições <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                      <li><a href="#">Iniciar Pleito</a></li>
+                      <li><a href="#">Inscrição de Cahapa</a></li>
+                      <li><a href="relatorios/rel_cancel.php">Relatório Não Votantes</a></li>
+                      <li><a href="#">Relatório Aptos a Votar</a></li>
                     </ul>
                   </li>
                 </ul>
