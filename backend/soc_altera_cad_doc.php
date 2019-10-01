@@ -21,6 +21,7 @@ $titzona     = $_POST['titzona'];
 $titsecao    = $_POST['titsecao'];
 $nivelform   = $_POST['nivelform'];
 $mat         = $_POST['mat'];
+$mat2        = $_POST['mat2'];
 $profissao   = $_POST['profissao'];
 $pis         = $_POST['pis'];
 $instit      = $_POST['instit'];
@@ -35,7 +36,7 @@ SOC_CPF='$cpf', SOC_CTPS='$ctps',SOC_CTPSSERIE='$ctpsserie', SOC_CTPSEXP='$ctpse
 SOC_TITULO='$titulo',SOC_TITZONA='$titzona', SOC_TITSE='$titsecao',SOC_PROFISSAO='$profissao',
 SOC_PROFISSAO='$profissao',SOC_NIVELFORM='$nivelform',SOC_MAT='$mat', SOC_PIS='$pis',
 SOC_INSTIT='$instit', SOC_CARGO='$cargo', SOC_LOTACAO='$lotacao',SOC_CARG_LOTAC='$cargolotac',
-SOC_MODIF_EM='$timestamp',SOC_MODIF_POR='$repres' WHERE SOC_COD = $cod");
+SOC_MODIF_EM='$timestamp',SOC_MODIF_POR='$repres', SOC_MAT2='$mat2' WHERE SOC_COD = $cod");
            
 if($insert)
 {

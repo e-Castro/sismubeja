@@ -480,7 +480,7 @@ $idp = $id;
               </select>
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label for="heard">Lotação:</label>
               <select class="form-control" name="lotacao">
                 <?php
@@ -508,7 +508,7 @@ $idp = $id;
               </select>
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label for="heard">Cargo de Lotaçao:</label>
               <select class="form-control" name="cargolotac">
                 <?php
@@ -533,6 +533,10 @@ $idp = $id;
                   <option value="<?php echo $cargo['CAR_COD'] ?>"><?php echo $cargo['CAR_NOME'] ?></option>
                 <?php } ?>
               </select>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>2ª Matricula:</label>
+              <input type="text" name="mat2" value="<?php echo $dados['SOC_MAT2']; ?>" class="form-control">
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12">
               <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar Alterações</button>
@@ -559,7 +563,7 @@ $idp = $id;
 
         <div class="row">
           <form action="backend/soc_altera_cad_sit.php" method="POST">
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label for="heard">Situaçao:</label>
               <input type="hidden" name="cod" value="<?php echo $dados['SOC_COD']; ?>">
               <select class="form-control" name="sit">
@@ -581,7 +585,7 @@ $idp = $id;
               </select>
             </div>
 
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>N. Port. Adimissão:</label>
               <input type="text" name="portadmis" value="<?php echo $dados['SOC_PORT_ADMIS']; ?>" class="form-control">
             </div>
@@ -592,6 +596,21 @@ $idp = $id;
             </div>
 
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>N. Port. 2ª Adimissão:</label>
+              <input type="text" name="portadmis2" value="<?php echo $dados['SOC_PORT_ADMIS2']; ?>" class="form-control">
+            </div>
+
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>Data 2ª Adimissão:</label>
+              <input type="date" name="dtadmissao2" value="<?php echo $dados['SOC_DTADMISSAO2']; ?>" class="form-control">
+            </div>
+
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>Data Falecimento:</label>
+              <input type="date" name="dtfalec" value="<?php echo $dados['SOC_DTFALEC']; ?>" class="form-control">
+            </div>
+
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>N. Port. Aposetadoria:</label>
               <input type="text" name="portaposent" value="<?php echo $dados['SOC_PORT_APOS']; ?>" class="form-control">
             </div>
@@ -601,7 +620,7 @@ $idp = $id;
               <input type="date" name="dtaposent" value="<?php echo $dados['SOC_DTAPOSENT']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>N. Beneficio:</label>
               <input type="text" name="numbenef" value="<?php echo $dados['SOC_NUM_BENEF']; ?>" class="form-control">
             </div>
@@ -611,12 +630,7 @@ $idp = $id;
               <input type="date" name="dtbenef" value="<?php echo $dados['SOC_DTBENEF']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <label>Data Falecimento:</label>
-              <input type="date" name="dtfalec" value="<?php echo $dados['SOC_DTFALEC']; ?>" class="form-control">
-            </div>
-
-            <div class="col-md-8 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
               <label for="message">Obs.:(maximo 100 caraquiteres)</label>
               <input id="message" class="form-control" name="obs" value="<?php echo $dados['SOC_OBS']; ?>" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10">
 
