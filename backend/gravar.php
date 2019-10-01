@@ -15,7 +15,7 @@ if($tabela == 'usuarios'){
     $nivel = $_POST['nivel'];
     $obs   = $_POST['obs'];
 
-    $gravar = exeBD("INSERT INTO `usuarios`(`USU_COD`, `USU_LOGIN`, `USU_SENHA`, `USU_SOC_COD`, `USU_OBS`, `nivelacesso`) VALUES (DEFAULT,'$login','$senha',$socio,'$obs','$nivel')");
+    $gravar = exeBD("INSERT INTO `usuarios` (`USU_COD`, `USU_LOGIN`, `USU_SENHA`, `USU_SOC_COD`, `USU_OBS`, `USU_TIPO`) VALUES (DEFAULT,'$login','$senha',$socio,'$obs','$nivel')");
 
     if($gravar){
         echo "<script language='javascript' type='text/javascript'>alert('Novo Usuário - gravado com sucesso!');window.location.href='../form_usuarios.php';</script>";

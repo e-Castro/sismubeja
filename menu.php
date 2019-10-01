@@ -37,15 +37,20 @@
                   <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="consult_usuarios.php">Usuários</a></li>
-                      <li><a href="consult_sociosb.php">Sócios</a></li>
+                      <li><a>Sócios<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="consult_sociosb.php">Por Nome</a></li>
+                          <li><a href="consult_sociosb.php">Pro CPF</a></li>
+                          <li><a href="consult_sociosb.php">Pro Código</a></li>
+                        </ul>
+                      </li>
                       <li><a href="consult_cargos.php">Cargos</a></li>
                       <li><a href="consult_bairros.php">Bairros</a></li>
                       <li><a href="consult_distritos.php">Distritos</a></li>
                       <li><a href="consult_situacao.php">Situação</a></li>
                       <li><a href="consult_instituicao.php">Instituição</a></li>
                       <li><a href="consult_lotacao.php">Lotação</a></li>
-                      <li><a href="consult_relatorios.php">Relatórios</a></li>
-                      
+                      <li><a href+"consult_eventos.php">Eventos/Assembleias</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> financeiro <span class="fa fa-chevron-down"></span></a>
@@ -84,8 +89,9 @@
                     <ul class="nav child_menu">
                       <li><a href="#">Iniciar Pleito</a></li>
                       <li><a href="#">Inscrição de Cahapa</a></li>
-                      <li><a href="relatorios/rel_cancel.php">Relatório Não Votantes</a></li>
-                      <li><a href="#">Relatório Aptos a Votar</a></li>
+                      <li><a href="relatorios/caderno_votacao.php" target="blank">Caderno de Votação</a></li>
+                      <li><a href="relatorios/rel_cancel.php" target="blank">Relatório Não Votantes</a></li>
+                      <li><a href="relatorios/rel_aptos.php" target="blank">Relatório Aptos a Votar</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -189,7 +195,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/alberto.png" alt="">Alberto
+                    <img src="fotos/<?php echo foto($fotop);?>" alt=""><?php echo $usuario; ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -201,7 +207,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Ajuda</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
                   </ul>
                 </li>
 

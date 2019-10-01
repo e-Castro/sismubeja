@@ -68,7 +68,7 @@ $mensagem    = $_POST['mensagem'];
 
 $timestamp = date("Y-m-d H:i:s");
 
-$select = exeBD("SELECT SOC_CPF FROM SOCIOSB WHERE SOC_COD = '$cod'");
+$select = exeBD("SELECT SOC_CPF FROM SOCIOSB WHERE SOC_CPF = '$cpf'");
 
 	 $array = mysqli_fetch_array($select);
 	 $logarray = $array['SOC_CPF'];
@@ -149,12 +149,12 @@ $select = exeBD("SELECT SOC_CPF FROM SOCIOSB WHERE SOC_COD = '$cod'");
 			
            //Insere os dados no banco
            
-		   $insert = exeBD("INSERT INTO `sociosb`(`SOC_COD`, `SOC_COD_ANT`, `SOC_DTCADASTRO`, `SOC_NOME`, `SOC_APELIDO`, `SOC_DTNASC`, `SOC_FOTO`, `SOC_SEXO`, `SOC_NACION`, 
+		   $insert = exeBD("INSERT INTO `sociosb`(`SOC_COD`, `SOC_DTCADASTRO`, `SOC_NOME`, `SOC_APELIDO`, `SOC_DTNASC`, `SOC_FOTO`, `SOC_SEXO`, `SOC_NACION`, 
 		   `SOC_EST_ESTCIV`, `SOC_NATURALID`, `SOC_UF_NATURAL`, `SOC_PAI`, `SOC_MAE`, `SOC_END`, `SOC_NUM`, `SOC_BAIRRO`, `SOC_DIS_DISTRIT`, `SOC_CIDADE`, 
 		   `SOC_UF`, `SOC_CEP`, `SOC_EMAIL`, `SOC_TEL`, `SOC_CEL`, `SOC_RG`, `SOC_RG_DTEXP`, `SOC_UFRG`, `SOC_CPF`, `SOC_CTPS`, `SOC_CTPSSERIE`, `SOC_CTPSEXP`, 
 		   `SOC_TITULO`, `SOC_TITZONA`, `SOC_TITSE`, `SOC_PROFISSAO`, `SOC_NIVELFORM`, `SOC_MAT`, `SOC_INSTIT`, `SOC_CARGO`, `SOC_LOTACAO`, `SOC_CARG_LOTAC`, 
 		   `SOC_SITUAC`, `SOC_PORT_ADMIS`, `SOC_DTADMISSAO`, `SOC_PORT_APOS`, `SOC_DTAPOSENT`, `SOC_NUM_BENEF`, `SOC_DTBENEF`, `SOC_DTFALEC`, `SOC_OBS`, 
-		   `SOC_GAVETA`, `SOC_PIS`) VALUES (DEFAULT,'$cod',now(),'$nome','$apelido','$dtnasc','".$nome_imagem."','$sexo','$nascionalid','$estcivil',
+		   `SOC_GAVETA`, `SOC_PIS`) VALUES (DEFAULT,now(),'$nome','$apelido','$dtnasc','".$nome_imagem."','$sexo','$nascionalid','$estcivil',
 		   '$naturalid','$ufnatural','$pai','$mae','$end','$num','$bairro','$distrito','$cidade','$uf','$cep',
 		   '$email','$tel','$cel','$rg','$rgexp','$ufrg','$cpf','$ctps','$ctpsserie','$ctpsexp','$titulo','$titzona',
 		   '$titsecao','$profissao','$nivelform','$mat','$instit','$cargo','$lotacao','$cargolotac','$situac',

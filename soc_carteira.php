@@ -107,7 +107,7 @@ $socio = mysqli_fetch_array($sql_soc);
                               <?php
                               $bd = '16.938.090/0001-04';
                               $qr = 'qr_img050j/php/qr_img.php?';
-                              $qr .= 'd=192.168.0.7/projetos/ismubeja/consult_socios.php?id='.$cod.'&';
+                              $qr .= 'd=192.168.0.7/projetos/sismubeja/consult_socios.php?id='.$cod.'&';
                               $qr .= 'e=l&';
                               $qr .= 's=3&';
                               $qr .= 't=p';

@@ -4,7 +4,7 @@ include_once 'menu.php';
 include_once 'funcoes.php';
 
 $id = isset($_GET['id']) ? $_GET['id'] : '1';
-
+//$id = $id - 1;
 $dados = '';
 $foto = '';
 
@@ -17,7 +17,7 @@ if ($id == '') {
   //$foto = mysqli_fetch_object($consulta);
   $id = $dados['SOC_COD'];
 }
-
+$idp = $id;
 ?>
 
 <!-- page content -->
@@ -25,9 +25,9 @@ if ($id == '') {
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h2><a href="consult_socios.php?id=<?php echo $id = $id - 1; ?>"><i class="fa fa-backward"></i></a>
+        <h2><a href="consult_socios.php?id=<?php echo $idp = $idp - 1; ?>"><i class="fa fa-backward"></i></a>
            Consultar Sócios 
-          <a href="consult_socios.php?id=<?php echo $id = $id + 2; ?>"><i class="fa fa-forward"></i></a>
+          <a href="consult_socios.php?id=<?php echo $idp = $idp + 2; ?>"><i class="fa fa-forward"></i></a>
         </h2>
       </div>
       <form action="consult_sociosb.php" method="POST">
@@ -96,11 +96,18 @@ if ($id == '') {
 
                 echo "<img src='fotos/$foto' width='100%' height='100%' alt='Foto de exibição'>";
               }
-
+              if ($dados['SOC_DTDESF'] == ''){
               ?>
-              <input type="hidden" name="cod2" value="<?PHP echo $id = $id - 1; ?>">
+              <input type="hidden" name="cod2" value="<?PHP echo $id = $id; ?>">
               <input type="file" name="foto">
               <input type="submit" name="BTEnvia" value="Alterar foto">
+
+              <?php 
+              }else{
+              ?>
+              <h2 class="btn-danger"> DESFILIADO(A)</h2>
+              <?php } ?>
+              
             </form>
           </div>
           <form action="backend/soc_altera_cad_pessoais.php" method="POST">
@@ -108,12 +115,19 @@ if ($id == '') {
               <label>Código:</label>
               <input type="text" name="cod" value="<?php echo $dados['SOC_COD']; ?>" readonly="readonly" class="form-control">
             </div>
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label>Cód. Antigo:</label>
               <input type="text" name="cod_ant" value="<?php echo $dados['SOC_COD_ANT']; ?>" readonly="readonly" class="form-control">
             </div>
-
-            <div class="col-md-7 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+              <label>Data Filiação:</label>
+              <input type="text" name="cod_ant" value="<?php echo $dados['SOC_DTCADASTRO']; ?>" readonly="readonly" class="form-control">
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>Data Desfiliação:</label>
+              <input type="date" name="cod_ant" value="<?php echo $dados['SOC_DTDESF']; ?>" class="form-control">
+            </div>
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Nome:</label>
               <input type="text" name="nome" value="<?php echo $dados['SOC_NOME']; ?>" class="form-control">
             </div>
@@ -175,7 +189,10 @@ if ($id == '') {
               <input type="text" name="mae" value="<?php echo $dados['SOC_MAE']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <a href="#" class="btn btn-danger"><i class="fa fa-trash-o"></i> Desfiliação </a>
+              <a href="#" class="btn btn-primary"><i class="fa fa-edit"></i> Ficha Cadastral </a>
+              <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Identidade Sócio </a>
               <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar Alterações</button>
             </div>
           </form>

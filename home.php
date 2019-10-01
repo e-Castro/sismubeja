@@ -60,7 +60,7 @@ $desft = mysqli_num_rows($cancelado);
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
             </div>
           </div>
-          <!-- /top tiles -->
+          <!-- /top tiles 
 
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -243,7 +243,7 @@ $desft = mysqli_num_rows($cancelado);
 
                 </div>
               </div>
-            </div>-->
+            </div>
 
             <div class="col-md-6 col-sm-6 col-xs-12">
               <div class="x_panel tile fixed_height_320 overflow_hidden">
@@ -537,7 +537,7 @@ $desft = mysqli_num_rows($cancelado);
               <div class="row">
 
 
-                <!-- Start to do list -->
+                <!-- Start to do list
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="x_panel">
                     <div class="x_title">
@@ -604,9 +604,9 @@ $desft = mysqli_num_rows($cancelado);
                     </div>
                   </div>
                 </div>
-                <!-- End to do list -->
+                <!-- End to do list 
                 
-                <!-- start of weather widget -->
+                <!-- start of weather widget 
                 <div class="col-md-6 col-sm-6 col-xs-12">
                   <div class="x_panel">
                     <div class="x_title">
@@ -645,7 +645,7 @@ $desft = mysqli_num_rows($cancelado);
                         </div>
                         <div class="col-sm-8">
                           <div class="weather-text">
-                            <h2>Texas <br><i>Partly Cloudy Day</i></h2>
+                            <h2>Belo Jardim <br><i>Partly Cloudy Day</i></h2>
                           </div>
                         </div>
                       </div>

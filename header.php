@@ -10,6 +10,7 @@ $dados_user = mysqli_fetch_array($result);
 
 $codsoc = $dados_user['USU_SOC_COD'];
 $tipo = $dados_user['USU_TIPO'];
+$fotop = $dados_user['USU_SOC_COD'];
 
 ?>
 <html lang="pt-br">

@@ -20,6 +20,15 @@ function exePDO($query){
     return $pdo;
 }
 
+function foto($cod){
+   
+   $res = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
+   $dados = mysqli_fetch_array($res);
+   $foto = $dados['SOC_FOTO'];
+
+	return $foto;
+}
+
 function reais($valor){
 	//return $valor;
 	//$valor = str_replace(".","",$valor);

@@ -71,11 +71,12 @@ $foto        = $_FILES["foto"];
 
             if($insert)
 	        {
+				$id = $id -1;
                echo"<script language='javascript' type='text/javascript'>alert('Foto alterado com sucesso!');window.location.href='../consult_socios.php?id=$cod'</script>";
 	        }
 		    else
 		    {
-		       echo"<script language='javascript' type='text/javascript'>alert('N�o foi poss&iacute;vel alterar esse Socio! ERRO 12052017');window.location.href='../consult_socios.php?id=$cod''</script>";
+		       echo"<script language='javascript' type='text/javascript'>alert('N�o foi poss&iacute;vel alterar esse Socio! ERRO 12052017');window.location.href='../consult_socios.php?id=$cod'</script>";
      	    }
 		}
 		}

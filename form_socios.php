@@ -48,7 +48,7 @@ include_once 'menu.php';
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label>Código:</label>
-              <input type="text" name="cod" class="form-control">
+              <input type="text" name="cod" class="form-control" readonly="readonly">
             </div>
 
             <div class="col-md-6 col-sm-12 col-xs-12 form-group">
@@ -102,12 +102,12 @@ include_once 'menu.php';
               <input type="text" name="apelido" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Pai:</label>
               <input type="text" name="pai" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Mãe:</label>
               <input type="text" name="mae" class="form-control">
             </div>
