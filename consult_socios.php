@@ -105,7 +105,7 @@ $idp = $id;
               <?php 
               }else{
               ?>
-              <h2 class="btn-danger"> DESFILIADO(A)</h2>
+              <h3 class="btn-danger"> DESFILIADO</h3>
               <?php } ?>
               
             </form>
@@ -115,28 +115,30 @@ $idp = $id;
               <label>Código:</label>
               <input type="text" name="cod" value="<?php echo $dados['SOC_COD']; ?>" readonly="readonly" class="form-control">
             </div>
-            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Cód. Antigo:</label>
               <input type="text" name="cod_ant" value="<?php echo $dados['SOC_COD_ANT']; ?>" readonly="readonly" class="form-control">
             </div>
-            <div class="col-md-1 col-sm-12 col-xs-12 form-group">
-              <label>Data Filiação:</label>
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>Filiado em:</label>
               <input type="text" name="cod_ant" value="<?php echo $dados['SOC_DTCADASTRO']; ?>" readonly="readonly" class="form-control">
             </div>
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Data Desfiliação:</label>
               <input type="date" name="cod_ant" value="<?php echo $dados['SOC_DTDESF']; ?>" class="form-control">
             </div>
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label>Nascimento:</label>
+              <input type="date" name="dtnasc" value="<?php echo $dados['SOC_DTNASC']; ?>" class="form-control">
+            </div>
             <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Nome:</label>
               <input type="text" name="nome" value="<?php echo $dados['SOC_NOME']; ?>" class="form-control">
             </div>
-
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <label>Nascimento:</label>
-              <input type="date" name="dtnasc" value="<?php echo $dados['SOC_DTNASC']; ?>" class="form-control">
+            <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <label>Apelido:</label>
+              <input type="text" name="apelido" value="<?php echo $dados['SOC_APELIDO']; ?>" class="form-control">
             </div>
-
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label for="heard">Sexo:</label>
               <select class="form-control" name="sex">
@@ -174,10 +176,7 @@ $idp = $id;
               <input type="text" name="estcivil" value="<?php echo $dados['SOC_EST_ESTCIV']; ?>" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-              <label>Apelido:</label>
-              <input type="text" name="apelido" value="<?php echo $dados['SOC_APELIDO']; ?>" class="form-control">
-            </div>
+            
 
             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
               <label>Pai:</label>
