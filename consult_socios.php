@@ -72,8 +72,8 @@ $idp = $id;
             ?>
           </li>
           <li><a href="soc_ficha_desconto.php?senha=<?php echo $cod; ?>"><i class="fa fa-folder-open-o"></i></a></li>
-          <li><a href="soc_ficha_cad.php?senha=<?php echo $cod; ?>"><i class="fa fa-edit"></i></a></li>
-          <li><a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank"><i class="fa fa-credit-card"></i></a></li>
+          <li></li>
+          <li></li>
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
           
           <li><a class="close-link"><i class="fa fa-close"></i></a>
@@ -189,9 +189,9 @@ $idp = $id;
             </div>
 
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <a href="#" class="btn btn-danger"><i class="fa fa-trash-o"></i> Desfiliação </a>
-              <a href="#" class="btn btn-primary"><i class="fa fa-edit"></i> Ficha Cadastral </a>
-              <a href="#" class="btn btn-primary"><i class="fa fa-credit-card"></i> Identidade Sócio </a>
+              <a href="soc_ficha_desf.php?senha=<?php echo $cod; ?>" class="btn btn-primary" target="blank"><i class="fa fa-trash-o"></i> Desfiliação </a>
+              <a href="soc_ficha_cad.php?senha=<?php echo $cod; ?>" class="btn btn-primary" target="blank"><i class="fa fa-edit"></i> Ficha Cadastral </a>
+              <a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank" class="btn btn-primary"><i class="fa fa-credit-card"></i>Identidade Sócio </a>
               <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar Alterações</button>
             </div>
           </form>

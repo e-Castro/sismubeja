@@ -14,7 +14,7 @@ include_once 'funcoes.php';
       <form action="consult_sociosb.php" method="GET">
         <div class="title_right">
           <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-            <div class="input-group">  
+            <div class="input-group">
               <input type="text" class="form-control" name="nome" placeholder="Localizar sócio...">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="submit">Go!</button>
@@ -24,21 +24,24 @@ include_once 'funcoes.php';
         </div>
       </form>
     </div>
-
     <?php
-    
-        //GET com numero da nova pagina
-        $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
-        if($pagina == 0){
-          $pagina = 1;
-        }
-        $nome = (isset($_GET['nome'])) ? $_GET['nome'] : '';
-
+    //GET com numero da nova pagina
+    $pagina = (isset($_GET['pagina'])) ? $_GET['pagina'] : 1;
+    if ($pagina == 0) {
+      $pagina = 1;
+    }
+    $nome = (isset($_GET['nome'])) ? $_GET['nome'] : '';
     ?>
-
     <div class="x_panel">
       <div class="x_title">
-        <h2>Buscando por Nome: <?php if($nome == ''){echo 'GERAL';}else{echo $nome;} ?></h2>
+        <h2>Buscando por Nome:
+          <?php if ($nome == '') {
+            echo 'GERAL';
+          } else {
+            echo $nome;
+          }
+          ?>
+        </h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -51,31 +54,31 @@ include_once 'funcoes.php';
         <div class="clearfix"></div>
       </div>
       <div class="x_content">
-      <div class="row">
-        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
-          <label>CÓD.</label>
-        </div>
+        <div class="row">
+          <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+            <label>CÓD.</label>
+          </div>
 
-        <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-          <label>NOME</label>
-        </div>
+          <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+            <label>NOME</label>
+          </div>
 
-        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-          <label>MATRÍCULA</label>
-        </div>
+          <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <label>MATRÍCULA</label>
+          </div>
 
-        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-        <label>CPF</label>
-        </div>
+          <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <label>CPF</label>
+          </div>
 
-        <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-          <label>NASCIMENTO</label>
-        </div>
+          <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+            <label>NASCIMENTO</label>
+          </div>
 
-        <div class="col-md-1 col-sm-12 col-xs-12 form-group">
-          
+          <div class="col-md-1 col-sm-12 col-xs-12 form-group">
+
+          </div>
         </div>
-      </div>
 
         <?php
 
@@ -83,13 +86,13 @@ include_once 'funcoes.php';
         $itens_por_pagina = 13;
         $inicio = (($itens_por_pagina * $pagina) - $itens_por_pagina);
 
-        if($nome == ''){
+        if ($nome == '') {
           $resultado = exeBD("SELECT * FROM sociosb order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
           /*$num = mysqli_num_rows($resultado);*/
 
           $resultado_p = exeBD("SELECT * FROM sociosb order by SOC_NOME asc");
           $num_total = mysqli_num_rows($resultado_p);
-        }else{
+        } else {
           $resultado = exeBD("SELECT * FROM sociosb WHERE SOC_NOME LIKE '%$nome%' order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
           /*$num = mysqli_num_rows($resultado);*/
 
@@ -101,7 +104,7 @@ include_once 'funcoes.php';
 
         while ($l = mysqli_fetch_array($resultado)) {
           ?>
-          
+
           <div class="row">
 
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
@@ -130,7 +133,8 @@ include_once 'funcoes.php';
               </a>
             </div>
           </div>
-        <?php } echo $pagina;?>
+        <?php }
+        echo $pagina; ?>
       </div>
       <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
         <ul class="pagination">
@@ -139,13 +143,13 @@ include_once 'funcoes.php';
           </li>
           <?php for ($i = 1; $i < $num_paginas; $i++) {
             $estilo = "class=\"paginate_button\"";
-            
-            if($pagina == $i){
+
+            if ($pagina == $i) {
               $estilo = "class=\"paginate_button active\"";
-            }else{
+            } else {
               $estilo = "class=\"paginate_button\"";
             }
-              
+
             ?>
             <li <?php echo $estilo; ?>>
               <a href="consult_sociosb.php?pagina=<?php echo $i; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable"><?php echo $i; ?></a>
