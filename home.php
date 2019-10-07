@@ -68,42 +68,42 @@ $desft = mysqli_num_rows($cancelado);
 
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
-                    <h2>Top Campaign </h2>
+                    <h2>Status Sócios </h2>
                     <div class="clearfix"></div>
                   </div>
 
                   <div class="col-md-12 col-sm-12 col-xs-6">
                     <div>
-                      <p>Facebook Campaign</p>
+                      <p>Sócios Ativos</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="<?php echo $cer; ?>"></div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <p>Twitter Campaign</p>
+                      <p>Sócios Aposentados</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                          <div class="progress-bar bg" role="progressbar" data-transitiongoal="<?php echo $cer1; ?>"></div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12 col-xs-6">
                     <div>
-                      <p>Conventional Media</p>
+                      <p>Total Desfiliados</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="<?php echo $cer4; ?>"></div>
                         </div>
                       </div>
                     </div>
                     <div>
-                      <p>Bill boards</p>
+                      <p>Sócios Contribuintes</p>
                       <div class="">
                         <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $cer5= ($cer + $cer1); ?>"></div>
                         </div>
                       </div>
                     </div>

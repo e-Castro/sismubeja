@@ -53,15 +53,6 @@
                       <li><a href="consult_eventos.php">Eventos/Assembleias</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-bar-chart-o"></i> financeiro <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                    <li><a href="form.html">Mensalidades</a></li>
-                      <li><a href="form.html">Caixa</a></li>
-                      <li><a href="form_advanced.html">Contas a Pagar</a></li>
-                      <li><a href="form_validation.html">Contas a Receber</a></li>
-                      <li><a href="form_validation.html">Relatórios</a></li>
-                    </ul>
-                  </li>
                   <li><a><i class="fa fa-desktop"></i> Atendimentos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="general_elements.html">Jurídico</a></li>
@@ -85,27 +76,33 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>-->
-                  <li><a><i class="fa fa-clone"></i>Eleições <span class="fa fa-chevron-down"></span></a>
+
+                </ul>
+              </div>
+              <div class="menu_section">
+                <h3>Financeiro</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-bar-chart-o"></i> financeiro <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                    <li><a href="form.html">Mensalidades</a></li>
+                      <li><a href="form.html">Caixa</a></li>
+                      <li><a href="form_advanced.html">Contas a Pagar</a></li>
+                      <li><a href="form_validation.html">Contas a Receber</a></li>
+                      <li><a href="form_validation.html">Relatórios</a></li>
+                    </ul>
+                  </li>
+                </ul>  
+              </div>
+              <div class="menu_section">
+                <h3>Diretoria</h3>
+                <ul class="nav side-menu">
+                <li><a><i class="fa fa-clone"></i>Eleições <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Iniciar Pleito</a></li>
                       <li><a href="#">Inscrição de Cahapa</a></li>
                       <li><a href="rel_cad_votacao.php" target="blank">Caderno de Votação</a></li>
                       <li><a href="rel_cancel.php" target="blank">Relatório Não Votantes</a></li>
                       <li><a href="rel_aptos.php" target="blank">Relatório Aptos a Votar</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-              <div class="menu_section">
-                <h3>Finanças</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="e_commerce.html">E-commerce</a></li>
-                      <li><a href="projects.html">Projects</a></li>
-                      <li><a href="project_detail.html">Project Detail</a></li>
-                      <li><a href="contacts.html">Contacts</a></li>
-                      <li><a href="profile.html">Profile</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
@@ -120,6 +117,7 @@
                   </li>
                 </ul>  
               </div>
+              
               <div class="menu_section">
                 <h3>Tombamento</h3>
                 <ul class="nav side-menu">
