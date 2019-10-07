@@ -13,11 +13,11 @@ include_once 'funcoes.php';
       </div>
       <form action="consult_sociosb.php" method="GET">
         <div class="title_right">
-          <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="col-md-8 col-sm-5 col-xs-12 form-group pull-right top_search">
             <div class="input-group">
-              <input type="text" class="form-control" name="nome" placeholder="Localizar sócio...">
+              <input type="text" class="form-control" name="nome" placeholder="Digite aqui...">
               <span class="input-group-btn">
-                <button class="btn btn-default" type="submit">Go!</button>
+                <button class="btn btn-default" type="submit">Localizar!</button>
               </span>
             </div>
           </div>
@@ -133,8 +133,7 @@ include_once 'funcoes.php';
               </a>
             </div>
           </div>
-        <?php }
-        echo $pagina; ?>
+        <?php } ?>
       </div>
       <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
         <ul class="pagination">

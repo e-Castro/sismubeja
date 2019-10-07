@@ -50,7 +50,7 @@
                       <li><a href="consult_situacao.php">Situação</a></li>
                       <li><a href="consult_instituicao.php">Instituição</a></li>
                       <li><a href="consult_lotacao.php">Lotação</a></li>
-                      <li><a href+"consult_eventos.php">Eventos/Assembleias</a></li>
+                      <li><a href="consult_eventos.php">Eventos/Assembleias</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-bar-chart-o"></i> financeiro <span class="fa fa-chevron-down"></span></a>
@@ -70,7 +70,7 @@
                       <li><a href="form_validation.html">Relatórios</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                  <!--<li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="tables.html">Tables</a></li>
                       <li><a href="tables_dynamic.html">Table Dynamic</a></li>
@@ -84,14 +84,14 @@
                       <li><a href="echarts.html">ECharts</a></li>
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
-                  </li>
+                  </li>-->
                   <li><a><i class="fa fa-clone"></i>Eleições <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Iniciar Pleito</a></li>
                       <li><a href="#">Inscrição de Cahapa</a></li>
-                      <li><a href="relatorios/caderno_votacao.php" target="blank">Caderno de Votação</a></li>
-                      <li><a href="relatorios/rel_cancel.php" target="blank">Relatório Não Votantes</a></li>
-                      <li><a href="relatorios/rel_aptos.php" target="blank">Relatório Aptos a Votar</a></li>
+                      <li><a href="rel_cad_votacao.php" target="blank">Caderno de Votação</a></li>
+                      <li><a href="rel_cancel.php" target="blank">Relatório Não Votantes</a></li>
+                      <li><a href="rel_aptos.php" target="blank">Relatório Aptos a Votar</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -207,7 +207,7 @@
                       </a>
                     </li>
                     <li><a href="javascript:;">Ajuda</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
+                    <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Sair</a></li>
                   </ul>
                 </li>
 

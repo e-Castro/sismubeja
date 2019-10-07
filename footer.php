@@ -50,6 +50,34 @@
 
     <!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Sócios Ativos',  <?php echo $ativost; ?>],
+          ['Sócios Aposentados',      <?php echo $pen; ?>],
+          ['Sócios Mulheres',  <?php echo $femt; ?>],
+          ['Sócios Homens', <?php echo $masct; ?>],
+          ['Total Desfiliados',    <?php echo $desft; ?>]
+        ]);
+
+        var options = {
+          
+          is3D: true,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
    
   </body>
 </html>

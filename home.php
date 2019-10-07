@@ -42,45 +42,30 @@ $desft = mysqli_num_rows($cancelado);
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Sócios Aposentados</span>
               <div class="count"><?php echo $pen; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$pen)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer1 = ((($total-$pen)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-female"></i> Sócios Mulheres</span>
               <div class="count"><?php echo $femt; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$femt)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer2 = ((($total-$femt)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-male"></i> Sócios Homens</span>
               <div class="count"><?php echo $masct; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$masct)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
+              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer3 = ((($total-$masct)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
             </div>
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
               <span class="count_top"><i class="fa fa-user"></i> Total Desfiliados</span>
               <div class="count"><?php echo $desft; ?></div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
+              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer4 = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
             </div>
           </div>
-          <!-- /top tiles 
+          <!-- /top tiles -->
 
           <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="dashboard_graph">
 
-                <div class="row x_title">
-                  <div class="col-md-6">
-                    <h3>Network Activities <small>Graph title sub-title</small></h3>
-                  </div>
-                  <div class="col-md-6">
-                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
-                      <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                      <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
-                </div>
                 <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                   <div class="x_title">
                     <h2>Top Campaign </h2>
@@ -123,10 +108,13 @@ $desft = mysqli_num_rows($cancelado);
                       </div>
                     </div>
                   </div>
-
                 </div>
 
-                <div class="clearfix"></div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                  <div id="chart_plot_01" class="demo-placeholder"></div>
+                  <!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
+                </div>
+                
               </div>
             </div>
 
