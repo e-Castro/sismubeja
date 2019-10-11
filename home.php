@@ -25,106 +25,122 @@ $cancelado = exeBD("SELECT * FROM sociosb WHERE SOC_SITUAC LIKE 3 || SOC_SITUAC 
 $desft = mysqli_num_rows($cancelado);
 
 ?>
-        <!-- page content -->
-        <div class="right_col" role="main">
-          <!-- top tiles -->
-          <div class="row tile_count">
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-users"></i> Total Cadastrados</span>
-              <div class="count"><?php echo $total; ?></div>
-              <span class="count_bottom"><i class="green">100% -</i> dos cadastros</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Sócios Ativos</span>
-              <div class="count"><?php echo $ativost; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total-$ativost)/$total)*(-100)+100),2,',',''); ?>% </i> ver mais...</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Sócios Aposentados</span>
-              <div class="count"><?php echo $pen; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer1 = ((($total-$pen)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-female"></i> Sócios Mulheres</span>
-              <div class="count"><?php echo $femt; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer2 = ((($total-$femt)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-male"></i> Sócios Homens</span>
-              <div class="count"><?php echo $masct; ?></div>
-              <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer3 = ((($total-$masct)/$total)*(-100)+100),2,',',''); ?>% </i>  ver mais...</span>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-user"></i> Total Desfiliados</span>
-              <div class="count"><?php echo $desft; ?></div>
-              <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer4 = ((($total-$desft)/$total)*(-100)+100),2,',',''); ?>% </i>  <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
-            </div>
-          </div>
-          <!-- /top tiles -->
+<!-- page content -->
+<div class="right_col" role="main">
+  <!-- top tiles -->
+  <div class="row tile_count">
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-users"></i> Total Cadastrados</span>
+      <div class="count"><?php echo $total; ?></div>
+      <span class="count_bottom"><i class="green">100% -</i> dos cadastros</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> Sócios Ativos</span>
+      <div class="count"><?php echo $ativost; ?></div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer = ((($total - $ativost) / $total) * (-100) + 100), 2, ',', ''); ?>% </i> ver mais...</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> Sócios Aposentados</span>
+      <div class="count"><?php echo $pen; ?></div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer1 = ((($total - $pen) / $total) * (-100) + 100), 2, ',', ''); ?>% </i> ver mais...</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-female"></i> Sócios Mulheres</span>
+      <div class="count"><?php echo $femt; ?></div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer2 = ((($total - $femt) / $total) * (-100) + 100), 2, ',', ''); ?>% </i> ver mais...</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-male"></i> Sócios Homens</span>
+      <div class="count"><?php echo $masct; ?></div>
+      <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i><?php echo number_format($cer3 = ((($total - $masct) / $total) * (-100) + 100), 2, ',', ''); ?>% </i> ver mais...</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+      <span class="count_top"><i class="fa fa-user"></i> Total Desfiliados</span>
+      <div class="count"><?php echo $desft; ?></div>
+      <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i><?php echo number_format($cer4 = ((($total - $desft) / $total) * (-100) + 100), 2, ',', ''); ?>% </i> <a href="relatorios/rel_cancel.php" target="blank">ver mais...</a></span>
+    </div>
+  </div>
+  <!-- /top tiles -->
+  <div class="x_panel">
+    <div class="x_title">
+      <h2>Gráficos de Acompanhamento</h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+        </li>
+        <li><a class="close-link"><i class="fa fa-close"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <div class="x_content">
 
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="dashboard_graph">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="dashboard_graph">
 
-                <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                  <div class="x_title">
-                    <h2>Status Sócios </h2>
-                    <div class="clearfix"></div>
-                  </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+              <div class="x_title">
+                <h2>Status Sócios </h2>
+                <div class="clearfix"></div>
+              </div>
 
-                  <div class="col-md-12 col-sm-12 col-xs-6">
-                    <div>
-                      <p>Sócios Ativos</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="<?php echo $cer; ?>"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Sócios Aposentados</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg" role="progressbar" data-transitiongoal="<?php echo $cer1; ?>"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 col-sm-12 col-xs-6">
-                    <div>
-                      <p>Total Desfiliados</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="<?php echo $cer4; ?>"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <p>Sócios Contribuintes</p>
-                      <div class="">
-                        <div class="progress progress_sm" style="width: 76%;">
-                          <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $cer5= ($cer + $cer1); ?>"></div>
-                        </div>
-                      </div>
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <div>
+                  <p>Sócios Ativos</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div class="progress-bar bg-blue" role="progressbar" data-transitiongoal="<?php echo $cer; ?>"></div>
                     </div>
                   </div>
                 </div>
-
-                <div class="col-md-9 col-sm-9 col-xs-12">
-                  <div id="chart_plot_01" class="demo-placeholder"></div>
-                  <!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
+                <div>
+                  <p>Sócios Aposentados</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div class="progress-bar bg" role="progressbar" data-transitiongoal="<?php echo $cer1; ?>"></div>
+                    </div>
+                  </div>
                 </div>
-                
+              </div>
+              <div class="col-md-12 col-sm-12 col-xs-6">
+                <div>
+                  <p>Total Desfiliados</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div class="progress-bar bg-red" role="progressbar" data-transitiongoal="<?php echo $cer4; ?>"></div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <p>Sócios Contribuintes</p>
+                  <div class="">
+                    <div class="progress progress_sm" style="width: 76%;">
+                      <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="<?php echo $cer5 = ($cer + $cer1); ?>"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <div class="col-md-9 col-sm-9 col-xs-12">
+              <div id="chart_plot_01" class="demo-placeholder"></div>
+              <!--<div id="piechart" style="width: 900px; height: 500px;"></div>-->
+            </div>
+
           </div>
-          <br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
 
-          <div class="row">
+  <div class="row">
 
 
-            <!--<div class="col-md-4 col-sm-4 col-xs-12">
+    <!--<div class="col-md-4 col-sm-4 col-xs-12">
               <div class="x_panel tile fixed_height_320">
                 <div class="x_title">
                   <h2>App Versions</h2>
@@ -701,11 +717,11 @@ $desft = mysqli_num_rows($cancelado);
 
                 </div>
                 <!-- end of weather widget -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
+  </div>
+</div>
+</div>
+</div>
+<!-- /page content -->
 <?php
 include_once 'footer.php';
 ?>

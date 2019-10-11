@@ -24,25 +24,26 @@ $ip = getenv("REMOTE_HOST"); // captura o ip do visitante
 </head>
 <body>
 <?php
-$cod  = $_GET['cod'];
-$nome = $_GET['nome'];
-$cpf  = $_GET['cpf'];
-$rg   = $_GET['rg'];
-$sit  = $_GET['sit'];
-$mat  = $_GET['mat'];
+$cod  = $_GET['id'];
 
 $sql_soc = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
 $socio = mysqli_fetch_array($sql_soc);
 
+$nome = $socio['SOC_NOME'];
+$cpf  = $socio['SOC_CPF'];
+$rg   = $socio['SOC_RG'];
+$sit  = $socio['SOC_SITUAC'];
+$mat  = $socio['SOC_MAT'];
+
+if($sit == 3 || $sit == 5){
+    echo "<h1 align='center'color='red'><span>Situação Cadastral: CANCELADO</span></h1>";
+}else{
+    echo "<h1 align='center'><span>Situação Cadastral: ATIVO - OK</span></h1>";
+}
 ?>
-
-<h1 align='center'><span>Identidade Sindical - </span>Consulta de Socios</h1>
-
-<p align="center"><input type="button" value="Voltar" onClick="history.go(-1)"/>  <input type="button" value="Imprimir" onclick="window.print()"/>
-</p>
         
 <p align="center">
-          <TABLE width="805" height="90" ALIGN='CENTER' BACKGROUND='images/carteira.jpg'>
+          <TABLE width="800" height="80" ALIGN='CENTER' background='images/carteira.jpg'>
           <TR>
                <TD>
                    <TABLE>
@@ -58,9 +59,9 @@ $socio = mysqli_fetch_array($sql_soc);
                           <TR>
                               <TD align="center" valign="top"><br><img src='images/img2.png'><?php $sql = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
                                       // Exibe as informações de cada usuário
-                                      while ($usuario = mysqli_fetch_object($sql)) {
+                                      while ($usuario = mysqli_fetch_array($sql)) {
 	                                  // Exibir a foto
-	                                  echo "<img src='fotos/".$usuario->SOC_FOTO."' width='110' height='130' alt='Foto de exibição' /><br />";
+	                                  echo "<img src='fotos/".$usuario['SOC_FOTO']."' width='110' height='130' alt='Foto de exibição' /><br />";
                                       }?>
                                       <font size=1><b>C&Oacute;D: <?php echo $cod; ?></b></font>
                               </TD>
@@ -69,8 +70,8 @@ $socio = mysqli_fetch_array($sql_soc);
                                   <TABLE>
                                          <TR><TD></TD></TR>
                                          
-                                         <TR><TD><font face="Arial" size=1><B>NOME:</B></font></TD></TR>
-                                         <TR><TD><font face="Arial" size=1><?php echo $nome; ?>.</font></TD></TR>
+                                         <TR><TD><font face="Arial" size=1><B>NOME: </B><?php echo $nome; ?>.</font></TD></TR>
+                                         <TR><TD><font face="Arial" size=1></font></TD></TR>
                                          <TR><TD></TD></TR>
                                          <TR><TD><font face="Arial" size=1><B>SECRETARIA:</B></font></TD></TR>
                                          <TR>
@@ -90,8 +91,6 @@ $socio = mysqli_fetch_array($sql_soc);
                                          <TR><TD><font face="Arial" size=1><B>PROFISS&Atilde;O:</B><?php echo $inst = $socio['SOC_PROFISSAO']; ?></font></TD></TR>
                                          <TR><TD><font face="Arial" size=1><B>MAT.:</B><?php echo $mat; ?></TD></TR>
                                          <TR><TD><font face="Arial" size=1><B>CPF:</B><?php echo $cpf; ?></TD></TR>
-                                         <TR><TD ALIGN="CENTER">_____________________________</TD></TR>
-                                         <TR><TD ALIGN="CENTER"><font face="Arial" size=1>------ <B>ASSINATURA DO SOCIO</B> --------</FONT></TD></TR>
                                          <TR><TD></TD></TR>
                                          <TR><TD></TD></TR>
                                          <TR><TD></TD></TR>
@@ -100,34 +99,7 @@ $socio = mysqli_fetch_array($sql_soc);
                                          <TR><TD></TD></TR>
                                          <TR><TD></TD></TR>
                                   </TABLE>
-                              </TD>
-
-                              <TD><img src='images/img1.png'</TD>
-                              <TD colspan=2 valign="top"><br><br>
-                              <?php
-                              $bd = '16.938.090/0001-04';
-                              $qr = 'qr_img050j/php/qr_img.php?';
-                              $qr .= 'd=https://www.ecastro.com.br/sismubeja/socios.php?id='.$cod.'&';
-                              $qr .= 'e=l&';
-                              $qr .= 's=3&';
-                              $qr .= 't=p';
-                              ?>
-                              <img src="<?php echo $qr; ?>" border='1'/>
-                              </TD>
-                              <TD ALIGN="CENTER" VALIGN="TOP"><BR><BR><BR>
-                              <TABLE>
-                              <TR>
-                                         <TD ALIGN="CENTER"><B><?php geraCodigoBarra($cod);?></B></TD>
-                                     </TR>
-                                     <TR>
-                                         <TD><B>EXPEDI&Ccedil;&Atilde;O</B></TD>
-                                     </TR>
-                                     <TR>
-                                         <TD ALIGN="CENTER"><B><?PHP echo $data = date("d/m/Y");?></B></TD>
-                                     </TR>
-                                     
-                              </TABLE>
-                              </TD>
+                              
                           </TR>
                    </TABLE>
               </TD>

@@ -61,16 +61,7 @@ class myPDF extends FPDF {
         $cor = 0;
 
         while($l = mysqli_fetch_array($result)){
-            //------localizar secretaria------
-            $ins = $l['SOC_INSTIT'];
-            $instituicao = '';
-            $resulti = exeBD("SELECT * FROM instituicao WHERE INS_COD LIKE '$ins'");
-            $inst = mysqli_fetch_array($resulti);
-            if($inst < 1){
-                $instituicao = 'NÃO CADASTRADO';
-            }else{
-                $instituicao = $inst['INS_NOME'];
-            }    
+             
             //------localizar situação------
             $sit = $l['SOC_SITUAC'];
             $results = exeBD("SELECT * FROM situacao WHERE SIT_COD LIKE $sit");
@@ -96,9 +87,9 @@ class myPDF extends FPDF {
                 $this->Cell(15,7,$l['SOC_COD'],0,0,'R');
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L');
                 $this->Cell(45,7,utf8_decode($l['SOC_BAIRRO']),0,0,'C');
-                $this->Cell(40,7,utf8_decode($situacao),0,0,'C');
+                $this->Cell(40,7,$situacao,0,0,'C');
                 $this->Cell(50,7,utf8_decode($cargo),0,0,'C');
-                $this->Cell(25,7,utf8_decode($l['SOC_CPF']),0,1,'C');
+                $this->Cell(25,7,$l['SOC_CPF'],0,1,'C');
             }else{
                 $cor = 0;
                 $this->SetFont('arial','B',8);
@@ -107,9 +98,9 @@ class myPDF extends FPDF {
                 $this->Cell(15,7,$l['SOC_COD'],0,0,'R',true);
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L',true);
                 $this->Cell(45,7,utf8_decode($l['SOC_BAIRRO']),0,0,'C',true);
-                $this->Cell(40,7,utf8_decode($situacao),0,0,'C',true);
+                $this->Cell(40,7,$situacao,0,0,'C',true);
                 $this->Cell(50,7,utf8_decode($cargo),0,0,'C',true);
-                $this->Cell(25,7,utf8_decode($l['SOC_CPF']),0,1,'C',true);
+                $this->Cell(25,7,$l['SOC_CPF'],0,1,'C',true);
             }
            
             $contador = $contador + 1;

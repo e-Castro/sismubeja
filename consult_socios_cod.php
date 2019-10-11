@@ -11,11 +11,11 @@ include_once 'funcoes.php';
       <div class="title_left">
         <h2>Cadastros</h2>
       </div>
-      <form action="consult_sociosb.php" method="GET">
+      <form action="consult_socios_cod.php" method="GET">
         <div class="title_right">
           <div class="col-md-8 col-sm-5 col-xs-12 form-group pull-right top_search">
             <div class="input-group">
-              <input type="text" class="form-control" name="nome" placeholder="Digite aqui...">
+              <input type="text" class="form-control" name="nome" placeholder="Digite o Código aqui...">
               <span class="input-group-btn">
                 <button class="btn btn-default" type="submit">Localizar!</button>
               </span>
@@ -34,7 +34,7 @@ include_once 'funcoes.php';
     ?>
     <div class="x_panel">
       <div class="x_title">
-        <h2>Buscando por Nome:
+        <h2>Buscando por Código:
           <?php if ($nome == '') {
             echo 'GERAL';
           } else {
@@ -87,16 +87,16 @@ include_once 'funcoes.php';
         $inicio = (($itens_por_pagina * $pagina) - $itens_por_pagina);
 
         if ($nome == '') {
-          $resultado = exeBD("SELECT * FROM sociosb order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
+          $resultado = exeBD("SELECT * FROM sociosb order by SOC_COD asc limit $inicio, $itens_por_pagina ");
           /*$num = mysqli_num_rows($resultado);*/
 
-          $resultado_p = exeBD("SELECT * FROM sociosb order by SOC_NOME asc");
+          $resultado_p = exeBD("SELECT * FROM sociosb order by SOC_COD asc");
           $num_total = mysqli_num_rows($resultado_p);
         } else {
-          $resultado = exeBD("SELECT * FROM sociosb WHERE SOC_NOME LIKE '%$nome%' order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
+          $resultado = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $nome order by SOC_NOME asc limit $inicio, $itens_por_pagina ");
           /*$num = mysqli_num_rows($resultado);*/
 
-          $resultado_p = exeBD("SELECT * FROM sociosb WHERE SOC_NOME LIKE '%$nome%' order by SOC_NOME asc");
+          $resultado_p = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $nome order by SOC_NOME asc");
           $num_total = mysqli_num_rows($resultado_p);
         }
 
@@ -110,7 +110,7 @@ include_once 'funcoes.php';
       <div class="dataTables_paginate paging_simple_numbers" id="datatable_paginate">
         <ul class="pagination">
           <li class="paginate_button previous" id="datatable_previous">
-            <a href="consult_sociosb.php?pagina=0&nome=<?php echo $nome; ?>" aria-controls="datatable">Primeira</a>
+            <a href="consult_socios_cod.php?pagina=0&nome=<?php echo $nome; ?>" aria-controls="datatable">Primeira</a>
           </li>
           <?php for ($i = 1; $i < $num_paginas; $i++) {
             $estilo = "class=\"paginate_button\"";
@@ -123,11 +123,11 @@ include_once 'funcoes.php';
 
             ?>
             <li <?php echo $estilo; ?>>
-              <a href="consult_sociosb.php?pagina=<?php echo $i; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable"><?php echo $i; ?></a>
+              <a href="consult_socios_cod.php?pagina=<?php echo $i; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable"><?php echo $i; ?></a>
             </li>
           <?php } ?>
           <li class="paginate_button next" id="datatable_next">
-            <a href="consult_sociosb.php?pagina=<?php echo $num_paginas; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable">Ultima</a>
+            <a href="consult_socios_cod.php?pagina=<?php echo $num_paginas; ?>&nome=<?php echo $nome; ?>" aria-controls="datatable">Ultima</a>
           </li>
         </ul>
       </div>

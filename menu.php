@@ -39,9 +39,10 @@
                       <li><a href="consult_usuarios.php">Usuários</a></li>
                       <li><a>Sócios<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
-                          <li><a href="consult_sociosb.php">Por Nome</a></li>
-                          <li><a href="consult_sociosb.php">Pro CPF</a></li>
-                          <li><a href="consult_sociosb.php">Pro Código</a></li>
+                          <li><a href="consult_socios_cod.php">Por Código</a></li>
+                          <li><a href="consult_socios_nome.php">Por Nome</a></li>
+                          <li><a href="consult_socios_mat.php">Por Matricula</a></li>
+                          <li><a href="consult_socios_cpf.php">Por CPF</a></li>
                         </ul>
                       </li>
                       <li><a href="consult_cargos.php">Cargos</a></li>

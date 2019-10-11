@@ -125,7 +125,7 @@ $idp = $id;
             </div>
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Data Desfiliação:</label>
-              <input type="date" name="cod_ant" value="<?php echo $dados['SOC_DTDESF']; ?>" class="form-control">
+              <input type="date" name="dtdesf" value="<?php echo $dados['SOC_DTDESF']; ?>" readonly="readonly" class="form-control">
             </div>
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
               <label>Nascimento:</label>
