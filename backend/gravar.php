@@ -38,7 +38,7 @@ if($tabela == 'usuarios'){
     $nome = $_POST['nome'];
     $obs   = $_POST['obs'];
 
-    $gravar = exeBD("INSERT INTO `$tabela` (`BAI_COD`, `BAI_NOME`, `BAI_OBS`) VALUES (DEFAULT,'$nome','$obs')");
+    $gravar = exeBD("INSERT INTO `$tabela` (`BAI_ID`, `BAI_NOME`, `BAI_OBS`) VALUES (DEFAULT,'$nome','$obs')");
 
     if($gravar){
         echo "<script language='javascript' type='text/javascript'>alert('Novo Bairro: $nome - gravado com sucesso!');window.location.href='../form_bairros.php';</script>";
