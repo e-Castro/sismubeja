@@ -43,6 +43,7 @@
                           <li><a href="consult_socios_nome.php">Por Nome</a></li>
                           <li><a href="consult_socios_mat.php">Por Matricula</a></li>
                           <li><a href="consult_socios_cpf.php">Por CPF</a></li>
+                          <li><a href="consult_socios_cod_ant.php">Por Código_Antigo</a></li>
                         </ul>
                       </li>
                       <li><a href="consult_cargos.php">Cargos</a></li>

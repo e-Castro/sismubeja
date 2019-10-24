@@ -38,7 +38,7 @@ class myPDF extends FPDF {
 
         $this ->setFont('arial', 'B', 8);
         $this->Cell(10,7,'ORDEM',0,0,'L');
-        $this->Cell(15,7,'CODIGO',0,0,'C');
+        $this->Cell(15,7,'COD.',0,0,'C');
         $this->Cell(90,7,utf8_decode('NOME DO SÓCIO'),0,0,'L');
         $this->Cell(40,7,utf8_decode('SITUAÇÃO'),0,0,'C');
         $this->Cell(25,7,'CPF',0,0,'C');
@@ -86,7 +86,7 @@ class myPDF extends FPDF {
                 $this->SetFont('arial','B',8);
                 $this->Cell(10,7,$contador,0,0,'R');
                 $this->SetFont('arial','',8);
-                $this->Cell(15,7,$l['SOC_COD'],0,0,'R');
+                $this->Cell(15,7,$l['SOC_COD'],0,0,'C');
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L');
                 $this->Cell(40,7,$situacao,0,0,'C');
                 $this->Cell(25,7,$l['SOC_CPF'],0,0,'C');
@@ -96,7 +96,7 @@ class myPDF extends FPDF {
                 $this->SetFont('arial','B',8);
                 $this->Cell(10,7,$contador,0,0,'R', true);
                 $this->SetFont('arial','',8);
-                $this->Cell(15,7,$l['SOC_COD'],0,0,'R', true);
+                $this->Cell(15,7,$l['SOC_COD'],0,0,'C', true);
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L', true);
                 $this->Cell(40,7,$situacao,0,0,'C', true);
                 $this->Cell(25,7,$l['SOC_CPF'],0,0,'C', true);
