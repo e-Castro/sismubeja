@@ -102,12 +102,13 @@ if ($tabela == 'usuarios') {
         echo "<script language='javascript' type='text/javascript'>alert('Erro de comunicação com o Banco de Dados!');window.location.href='../form_lotacao.php';</script>";
     }
 } else if ($tabela == 'evento') {
-    $data   = $_POST['data'];
+    $data = $_POST['data'];
+    $hora = $_POST['hora']; 
     $nome = $_POST['nome'];
-    $obs   = $_POST['obs'];
+    $obs  = $_POST['obs'];
     $d = ConverteData($data);
 
-    $gravar = exeBD("INSERT INTO `evento`(`EVE_ID`, `EVE_DATA`, `EVE_NOME`, `EVE_OBS`) VALUES (DEFAULT,'$data','$nome','$obs')");
+    $gravar = exeBD("INSERT INTO `evento`(`EVE_ID`, `EVE_DATA`, `EVE_HORARIO`,`EVE_NOME`, `EVE_OBS`) VALUES (DEFAULT,'$data','$hora','$nome','$obs')");
 
     if ($gravar != '') {
 

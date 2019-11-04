@@ -39,16 +39,20 @@
       </div>
       <div class="x_content">
           <div class="row">
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+          <div class="col-md-2 col-sm-12 col-xs-12 form-group">
               <label>Data:</label>
                 <input  type="date" name="data" class="form-control">
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
+              <label>Horário:</label>
+                <input  type="text" name="hora" class="form-control">
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12 form-group">
               <label>Evento: </label>
                 <input  type="text" name="nome" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
               <label>Obs:</label>
               <input type="text" name="obs" class="form-control">
             </div>

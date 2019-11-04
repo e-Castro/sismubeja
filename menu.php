@@ -105,6 +105,7 @@
                       <li><a href="rel_cad_votacao.php" target="blank">Caderno de Votação</a></li>
                       <li><a href="rel_cancel.php" target="blank">Relatório Não Votantes</a></li>
                       <li><a href="rel_aptos.php" target="blank">Relatório Aptos a Votar</a></li>
+                      <li><a href="aptos_por_bairro.php" target="blank">Relatório Aptos por Bairro</a></li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>

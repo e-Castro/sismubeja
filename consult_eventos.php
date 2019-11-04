@@ -73,7 +73,7 @@ include_once 'funcoes.php';
 
               <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                 <a href="rel_evento_pres.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Presenças</button></a>
-                <a href="rel_evento_abonos.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-file-text-o"></i> Abonos</button></a>
+                <a href="abono_falta.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-file-text-o"></i> Abonos</button></a>
               </div>
             </div>
           <?php } ?>

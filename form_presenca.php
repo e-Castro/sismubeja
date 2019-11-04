@@ -24,7 +24,7 @@ if ($data) {
 }
 ?>
 <!-- page content -->
-<form action="backend/gravar.php?tb=presenca" method="POST">
+<form action="consult_socios_presenca.php" method="GET">
   <div class="right_col" role="main">
     <div class="">
       <div class="page-title">
@@ -51,16 +51,15 @@ if ($data) {
           <?php if ($tipo == 1) { ?>
             <div class="row">
               <div class="col-md-5 col-sm-12 col-xs-12 form-group">
-                <label>Código do Sócio: </label>
-                <input type="text" name="cod" class="form-control">
+                <label>Nome do Sócio: </label>
+                <input type="text" name="nome" class="form-control">
               </div>
-              <br />
             </div>
             <div class="ln_solid"></div>
             <div class="form-group">
             <div class="col-md-6 col-sm-12 col-xs-12">
               <button type="reset" class="btn btn-success"><i class="fa fa-eraser"></i> Limpar</button>
-              <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar</button>
+              <button type="submit" class="btn btn-primary"><i class="fa fa-binoculars"></i> Localizar</button>
             </div>
             </div>
           <?php } ?>
