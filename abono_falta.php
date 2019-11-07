@@ -45,14 +45,10 @@ date_default_timezone_set('America/Sao_Paulo');
 
     $sql = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod1");
 
-
-    if (mysqli_num_rows($sql) <= 0) {
-        echo "<script language='javascript' type='text/javascript'>alert('Socio nao localizado');window.location.href='soc_localizar.php';</script>";
-        die();
-    }
-
     // Exibe as informações de cada usuário
     $dados = mysqli_fetch_array($sql);
+
+    if($dados['SOC_SITUAC'] == '1'){
 
     $cod   = $dados['SOC_COD'];
     $data  = date('Y-m-d H:i');
@@ -172,6 +168,7 @@ date_default_timezone_set('America/Sao_Paulo');
         </TR>
     </TABLE>
     <?php } ?>
+<?php } ?>
 </body>
 
 </html>

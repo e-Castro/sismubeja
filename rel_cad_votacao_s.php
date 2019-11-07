@@ -31,12 +31,12 @@ class myPDF extends FPDF {
         $this->Cell (0,1,"","",1,"C");
 
         $this ->setFont('arial', 'B', 8);
-        $this->Cell(10,7,'ORDEM',0,0,'L');
+        //$this->Cell(10,7,'ORDEM',0,0,'L');
         $this->Cell(15,7,'ID.',0,0,'R');
         $this->Cell(90,7,'NOME',0,0,'L');
         $this->Cell(30,7,utf8_decode('SITUAÇÃO'),0,0,'C');
         $this->Cell(25,7,'CPF',0,0,'C');
-        $this->Cell(105,7,utf8_decode('ASSINATURA'),0,1,'C');
+        $this->Cell(115,7,utf8_decode('ASSINATURA'),0,1,'C');
         $this ->setFont('arial', '', 8);
         $this->Cell (0,1,"","B",1,"C");
     
@@ -71,23 +71,23 @@ class myPDF extends FPDF {
             if($cor == 0){
                 $cor = 1;
                 $this->SetFont('arial','B',8);
-                $this->Cell(10,7,$contador,0,0,'R');
+                //$this->Cell(10,7,$contador,0,0,'R');
                 $this->SetFont('arial','',8);
                 $this->Cell(15,7,$l['SOC_COD'],0,0,'R');
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L');
                 $this->Cell(30,7,$situacao,0,0,'C');
                 $this->Cell(25,7,$l['SOC_CPF'],0,0,'C');
-                $this->Cell(105,7,'',0,1,'C');
+                $this->Cell(115,7,'',0,1,'C');
             }else{
                 $cor = 0;
                 $this->SetFont('arial','B',8);
-                $this->Cell(10,7,$contador,0,0,'R',true);
+                //$this->Cell(10,7,$contador,0,0,'R',true);
                 $this->SetFont('arial','',8);
                 $this->Cell(15,7,$l['SOC_COD'],0,0,'R',true);
                 $this->Cell(90,7,utf8_decode($l['SOC_NOME']),0,0,'L',true);
                 $this->Cell(30,7,$situacao,0,0,'C',true);
                 $this->Cell(25,7,$l['SOC_CPF'],0,0,'C',true);
-                $this->Cell(105,7,'',0,1,'C',true);
+                $this->Cell(115,7,'',0,1,'C',true);
             }
            
             $contador = $contador + 1;
