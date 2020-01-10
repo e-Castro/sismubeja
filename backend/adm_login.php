@@ -1,5 +1,5 @@
 <?php
-include_once 'funcoes.php';
+include_once '../funcoes.php';
 session_start();
 ?>
 

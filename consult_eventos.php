@@ -67,11 +67,12 @@ include_once 'funcoes.php';
                 <input type="text" value="<?php echo $l['EVE_NOME']; ?>" class="form-control" readonly="readonly">
               </div>
 
-              <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
                 <input type="text" value="<?php echo $l['EVE_OBS']; ?>" class="form-control" readonly="readonly">
               </div>
 
-              <div class="col-md-3 col-sm-12 col-xs-12 form-group">
+              <div class="col-md-4 col-sm-12 col-xs-12 form-group">
+              <a href="rel_evento_lista.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-file-text-o"></i> Lista</button></a>
                 <a href="rel_evento_pres.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-check"></i> Presenças</button></a>
                 <a href="abono_falta.php?cod=<?php echo $l['EVE_ID']; ?>" target="blank"><button type="button" class="btn btn-primary"><i class="fa fa-file-text-o"></i> Abonos</button></a>
               </div>

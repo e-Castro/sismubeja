@@ -6,10 +6,10 @@ date_default_timezone_set('America/Sao_Paulo');
 
 // variaveis recebidas do formulario de cadastro
 
-$id        = $_POST['id'];
-$cbo       = $_POST['cbo'];
-$cargo     = $_POST['cargo'];
-$obs       = $_POST['obs'];
+$id    = $_POST['id'];
+$cbo   = $_POST['cbo'];
+$cargo = $_POST['cargo'];
+$obs   = $_POST['obs'];
 
 $insert = exeBD("UPDATE `cargos` SET `CAR_COD`='$cbo',`CAR_NOME`='$cargo',`CAR_OBS`='$obs' WHERE  CAR_ID=$id");
            

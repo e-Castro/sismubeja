@@ -54,7 +54,7 @@ class myPDF extends FPDF {
 
     function viewTable(){
 
-        $result = exeBD("SELECT * from sociosb WHERE SOC_SITUAC LIKE 1 || SOC_SITUAC LIKE 2 || SOC_SITUAC LIKE 7 ORDER BY SOC_NOME ASC");
+        $result = exeBD("SELECT * from sociosb WHERE SOC_INSTIT = 004 AND SOC_SITUAC = 1 || SOC_SITUAC = 2 || SOC_SITUAC = 7 ORDER BY SOC_NOME ASC");
       
         $contador = 0;
         $cor = 0;
@@ -67,7 +67,7 @@ class myPDF extends FPDF {
             $situac = mysqli_fetch_array($results);
             $situacao = $situac['SIT_NOME'];
             
-            $this->SetFillColor(211,211,211);
+            $this->SetFillColor(220,220,220);
             if($cor == 0){
                 $cor = 1;
                 $this->SetFont('arial','B',8);
