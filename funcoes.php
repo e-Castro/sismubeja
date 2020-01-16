@@ -1,7 +1,7 @@
 <?php
 
 function exeBD($query){
-   $con = mysqli_connect("localhost","u435165814_prod","sismubeja","u435165814_prod") or die("0;<center><br>Banco de dados indisponível.</center>");
+   $con = mysqli_connect("localhost","root","","u247783955_sism") or die("0;<center><br>Banco de dados indisponível.</center>");
    $ar = mysqli_query($con,$query);
   return $ar;
    mysqli_close($con);
@@ -15,7 +15,7 @@ function exeBD($query){
 
 function exePDO($query){
    // PDO
-    $pdo = new PDO("mysql:host=localhost;dbname=u435165814_prod", 'u435165814_prod', 'sismubeja');
+    $pdo = new PDO("mysql:host=localhost;dbname=u247783955_sism", 'root', '');
      
     return $pdo;
 }

@@ -106,6 +106,7 @@ $idp = $id;
               }else{
               ?>
               <h3 class="btn-danger"> DESFILIADO</h3>
+              <a href="backend/soc_recadastrar.php?cod=<?php echo $cod; ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i> Recadastrar </a>
               <?php } ?>
               
             </form>
