@@ -105,8 +105,8 @@ $idp = $id;
               <?php 
               }else{
               ?>
-              <h3 class="btn-danger"> DESFILIADO</h3>
-              <a href="backend/soc_recadastrar.php?cod=<?php echo $cod; ?>" class="btn btn-primary"><i class="fa fa-trash-o"></i> Recadastrar </a>
+              <h3 class="btn-danger"></i> DESFILIADO</h3>
+              <a href="backend/soc_reativar.php?id=<?php echo $cod; ?>" class="btn btn-success"><i class="fa fa-user"></i> REATIVAR </a>
               <?php } ?>
               
             </form>
@@ -188,12 +188,20 @@ $idp = $id;
               <label>Mãe:</label>
               <input type="text" name="mae" value="<?php echo $dados['SOC_MAE']; ?>" class="form-control">
             </div>
-
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <a href="soc_ficha_desf.php?senha=<?php echo $cod; ?>" class="btn btn-primary" target="blank"><i class="fa fa-trash-o"></i> Desfiliação </a>
-              <a href="soc_ficha_cad.php?senha=<?php echo $cod; ?>" class="btn btn-primary" target="blank"><i class="fa fa-edit"></i> Ficha Cadastral </a>
-              <a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank" class="btn btn-primary"><i class="fa fa-credit-card"></i>Identidade Sócio </a>
+            <div class="col-md-4 col-sm-12 col-xs-12">
               <button type="submit" class="btn btn-primary"><i class="fa fa-clipboard"></i> Gravar Alterações</button>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <a href="soc_ficha_cad.php?senha=<?php echo $cod; ?>" class="btn btn-success" target="blank"><i class="fa fa-file-text-o"></i> Ficha Cadastral </a>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank" class="btn btn-primary"><i class="fa fa-address-card"></i> Identidade Sócio </a>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <a href="soc_ficha_desf.php?senha=<?php echo $cod; ?>" class="btn btn-danger" target="blank"><i class="fa fa-file-text-o"></i> Ficha Desfiliação </a>
+            </div>
+            <div class="col-md-2 col-sm-12 col-xs-12">
+              <a href="backend/soc_ultima_alter.php?id=<?php echo $cod; ?>"class="btn btn-success"><i class="fa fa-eye"></i> Última Alteração </a>
             </div>
           </form>
         </div>
@@ -417,7 +425,7 @@ $idp = $id;
 
                   <?php }
                   }
-                  $resultado = exeBD("SELECT * FROM formacao");
+                  $resultado = exeBD("SELECT * FROM formacao ORDER BY FOR_NOME ASC");
 
                   while ($form = mysqli_fetch_array($resultado)) { ?>
                   <option value="<?php echo $form['FOR_COD'] ?>"><?php echo $form['FOR_NOME'] ?></option>
@@ -445,7 +453,7 @@ $idp = $id;
 
                   <?php }
                   }
-                  $resultado = exeBD("SELECT * FROM instituicao");
+                  $resultado = exeBD("SELECT * FROM instituicao ORDER BY INS_NOME ASC");
 
                   while ($inst = mysqli_fetch_array($resultado)) { ?>
                   <option value="<?php echo $inst['INS_COD'] ?>"><?php echo $inst['INS_NOME'] ?></option>
@@ -473,7 +481,7 @@ $idp = $id;
 
                   <?php }
                   }
-                  $resultado = exeBD("SELECT * FROM cargos");
+                  $resultado = exeBD("SELECT * FROM cargos ORDER BY CAR_NOME ASC");
 
                   while ($cargo = mysqli_fetch_array($resultado)) { ?>
                   <option value="<?php echo $cargo['CAR_COD'] ?>"><?php echo $cargo['CAR_NOME'] ?></option>
@@ -501,7 +509,7 @@ $idp = $id;
 
                   <?php }
                   }
-                  $resultado = exeBD("SELECT * FROM lotacao");
+                  $resultado = exeBD("SELECT * FROM lotacao ORDER BY LOT_NOME ASC");
 
                   while ($lot = mysqli_fetch_array($resultado)) { ?>
                   <option value="<?php echo $lot['LOT_COD'] ?>"><?php echo $lot['LOT_NOME'] ?></option>
@@ -515,7 +523,7 @@ $idp = $id;
                 <?php
                 $c = $dados['SOC_CARG_LOTAC'];
                 $cargo = "-";
-                $resultCargo = exeBD("SELECT * FROM cargos WHERE CAR_COD LIKE '$c'");
+                $resultCargo = exeBD("SELECT * FROM cargos WHERE CAR_COD LIKE '$c' ");
                 if (mysqli_num_rows($resultCargo) < 1) {
                   $cargo; ?>
 
@@ -528,7 +536,7 @@ $idp = $id;
 
                   <?php }
                   }
-                  $resultado = exeBD("SELECT * FROM cargos");
+                  $resultado = exeBD("SELECT * FROM cargos ORDER BY CAR_NOME ASC");
 
                   while ($cargo = mysqli_fetch_array($resultado)) { ?>
                   <option value="<?php echo $cargo['CAR_COD'] ?>"><?php echo $cargo['CAR_NOME'] ?></option>
@@ -612,12 +620,12 @@ $idp = $id;
             </div>
 
             <div class="col-md-3 col-sm-12 col-xs-12 form-group">
-              <label>N. Port. Aposetadoria:</label>
+              <label>N. Port. Aposentadoria:</label>
               <input type="text" name="portaposent" value="<?php echo $dados['SOC_PORT_APOS']; ?>" class="form-control">
             </div>
 
             <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <label>Data Aposetadoria:</label>
+              <label>Data Aposentadoria:</label>
               <input type="date" name="dtaposent" value="<?php echo $dados['SOC_DTAPOSENT']; ?>" class="form-control">
             </div>
 

@@ -129,8 +129,11 @@ date_default_timezone_set('America/Sao_Paulo');
     </table>
     <TABLE TABLE width="800" ALIGN="CENTER" BORDER="0">
         <TR>
-            <TD colspan="2" align='right'> <?php // Array com os meses do ano
-                                            echo "<b>Belo Jardim - " . $diasemana[$diasemana_numero] . ", " . date('d') . " de " . $meses[date('m')] . " de 20" . date('y'); ?>.</b>
+            <TD colspan="2" align='right'> 
+                <?php // Array com os meses do ano
+                   //echo "<b>Belo Jardim - " . $diasemana[$diasemana_numero] . ", " . date('d') . " de " . $meses[date('m')] . " de 20" . date('y'); 
+                    dataExtenso();
+                ?>.</b>
             </TD>
         </TR>
         <TR>
