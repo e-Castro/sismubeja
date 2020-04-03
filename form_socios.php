@@ -13,12 +13,7 @@ include_once 'menu.php';
 
       <div class="title_right">
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="button">Go!</button>
-            </span>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -40,18 +35,13 @@ include_once 'menu.php';
       <div class="x_content">
         
           <div class="row">
-            <input type="file" name="foto">
-            <div class="col-md-2 col-sm-12 col-xs-12 form-group">
-              <label>Foto:</label>
-              <img src="images/user.png" width="100%" height="100%" alt="Foto de exibição">
-            </div>
-
+            
             <div class="col-md-1 col-sm-12 col-xs-12 form-group">
               <label>Código:</label>
               <input type="text" name="cod" class="form-control" readonly="readonly">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
               <label>Nome:</label>
               <input type="text" name="nome" class="form-control">
             </div>
@@ -75,7 +65,7 @@ include_once 'menu.php';
               <input type="text" name="nacionalid" class="form-control">
             </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
               <label>Naturalidade:</label>
               <input type="text" name="naturalid" class="form-control">
             </div>
@@ -97,17 +87,17 @@ include_once 'menu.php';
               <input type="text" name="estcivil" class="form-control">
             </div>
 
-            <div class="col-md-7 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-4 col-sm-12 col-xs-12 form-group">
               <label>Apelido:</label>
               <input type="text" name="apelido" class="form-control">
             </div>
 
-            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Pai:</label>
               <input type="text" name="pai" class="form-control">
             </div>
 
-            <div class="col-md-5 col-sm-12 col-xs-12 form-group">
+            <div class="col-md-6 col-sm-12 col-xs-12 form-group">
               <label>Mãe:</label>
               <input type="text" name="mae" class="form-control">
             </div>
@@ -295,24 +285,29 @@ include_once 'menu.php';
           </div>
 
           <div class="col-md-4 col-sm-12 col-xs-12 form-group">
-            <label for="heard">Nível/Formação:</label>
-            <select class="form-control" name="nivelform">
-              <option value="">...</option>
-              <option value="PE">Especialização</option>
-              <option value="PB">Superior completo</option>
-              <option value="AL">Superior incompleto</option>
-              <option value="CE">Nível Médio</option>
-            </select>
+              <label for="heard">Nível/Formação:</label>
+              <select class="form-control" name="nivelform">
+              <option value="Null">...</option>
+                <?php
+                  $resultado = exeBD("SELECT * FROM formacao ORDER BY FOR_NOME ASC");
+                  while ($form = mysqli_fetch_array($resultado)) { ?>
+
+                  <option value="<?php echo $form['FOR_COD'] ?>"><?php echo $form['FOR_NOME'] ?></option>
+                <?php } ?>
+              </select>
           </div>
 
           <div class="col-md-4 col-sm-12 col-xs-12 form-group">
             <label for="heard">Instituição:</label>
             <select class="form-control" name="instit">
               <option value="">...</option>
-              <option value="PE">Especialização</option>
-              <option value="PB">Superior completo</option>
-              <option value="AL">Superior incompleto</option>
-              <option value="CE">Nível Médio</option>
+              <?php 
+                $resultado = exeBD("SELECT * FROM instituicao ORDER BY INS_NOME ASC");
+                while ($inst = mysqli_fetch_array($resultado)) { ?>
+
+                <option value="<?php echo $inst['INS_COD'] ?>"><?php echo $inst['INS_NOME'] ?></option>
+
+              <?php } ?>
             </select>
           </div>
 
@@ -320,7 +315,13 @@ include_once 'menu.php';
             <label for="heard">Cargo:</label>
             <select class="form-control" name="cargo">
               <option value="">...</option>
-              <option value="PE">TECNICO EM INFORMATICA</option>
+              <?php
+                $resultado = exeBD("SELECT * FROM cargos ORDER BY CAR_NOME ASC");
+                while ($cargo = mysqli_fetch_array($resultado)) { ?>
+
+                <option value="<?php echo $cargo['CAR_COD'] ?>"><?php echo $cargo['CAR_NOME'] ?></option>
+
+              <?php } ?>
             </select>
           </div>
 
@@ -328,10 +329,13 @@ include_once 'menu.php';
             <label for="heard">Lotação:</label>
             <select class="form-control" name="lotacao">
               <option value="">...</option>
-              <option value="PE">Especialização</option>
-              <option value="PB">Superior completo</option>
-              <option value="AL">Superior incompleto</option>
-              <option value="CE">Nível Médio</option>
+              <?php
+              $resultado = exeBD("SELECT * FROM lotacao ORDER BY LOT_NOME ASC");
+                while ($lot = mysqli_fetch_array($resultado)) { ?>
+
+                <option value="<?php echo $lot['LOT_COD'] ?>"><?php echo $lot['LOT_NOME'] ?></option>
+
+              <?php } ?>
             </select>
           </div>
 
@@ -339,7 +343,13 @@ include_once 'menu.php';
             <label for="heard">Cargo de Lotaçao:</label>
             <select class="form-control" name="cargolotac">
               <option value="">...</option>
-              <option value="PE">TECNICO EM INFORMATICA</option>
+              <?php
+                $resultado = exeBD("SELECT * FROM cargos ORDER BY CAR_NOME ASC");
+                while ($cargo = mysqli_fetch_array($resultado)) { ?>
+
+                <option value="<?php echo $cargo['CAR_COD'] ?>"><?php echo $cargo['CAR_NOME'] ?></option>
+
+              <?php } ?>
             </select>
           </div>
         </div>

@@ -79,7 +79,7 @@ if($sit == 3 || $sit == 5){
                                               <?php
                                                    $f = $socio['SOC_INSTIT'];
                                                    $inst="-";
-                                                   $resultInst = exeBD("select * from instituicao where INS_COD like '$f'");
+                                                   $resultInst = exeBD("SELECT * FROM instituicao WHERE INS_COD LIKE '$f'");
                                                    if(mysqli_num_rows($resultInst) < 1) {
 	                                                  $inst;
                                                    }

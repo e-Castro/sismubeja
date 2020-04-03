@@ -62,7 +62,7 @@ date_default_timezone_set('America/Sao_Paulo');
                 $meses = array(
                     '01' => 'Janeiro',
                     '02' => 'Fevereiro',
-                    '03' => 'Mar�o',
+                    '03' => 'Março',
                     '04' => 'Abril',
                     '05' => 'Maio',
                     '06' => 'Junho',
@@ -74,7 +74,7 @@ date_default_timezone_set('America/Sao_Paulo');
                     '12' => 'Dezembro'
                 );
                 // Array com os dias da semana
-                $diasemana = array('Domingo', 'Segunda-feira', 'Ter&ccedil;a-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sabado');
+                $diasemana = array('Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sabado');
 
                 // Aqui podemos usar a data atual ou qualquer outra data no formato Ano-m�s-dia (2014-02-28)
                 $data2 = date('Y-m-d');
@@ -129,11 +129,8 @@ date_default_timezone_set('America/Sao_Paulo');
     </table>
     <TABLE TABLE width="800" ALIGN="CENTER" BORDER="0">
         <TR>
-            <TD colspan="2" align='right'> 
-                <?php // Array com os meses do ano
-                   //echo "<b>Belo Jardim - " . $diasemana[$diasemana_numero] . ", " . date('d') . " de " . $meses[date('m')] . " de 20" . date('y'); 
-                    dataExtenso();
-                ?>.</b>
+            <TD colspan="2" align='right'> <?php // Array com os meses do ano
+                                            echo "<b>Belo Jardim - " . $diasemana[$diasemana_numero] . ", " . date('d') . " de " . $meses[date('m')] . " de 20" . date('y'); ?>.</b>
             </TD>
         </TR>
         <TR>
@@ -151,8 +148,6 @@ date_default_timezone_set('America/Sao_Paulo');
         <TR>
             <TD></TD>
             <TD></TD>
-            <TD><br></TD>
-            <TD></TD>
         </TR>
         <TR align='center'>
             <TD colspan="2" align='center'>
@@ -162,7 +157,7 @@ date_default_timezone_set('America/Sao_Paulo');
         <TR>
             <TD colspan="2" align="center">
                 <BR>
-                ---------------------------------------------------------------------------------------------------------------------------------------------------
+                -----------------------------------------------------------------------------------------------------------------------------
             </TD>
         </TR>
     </TABLE>

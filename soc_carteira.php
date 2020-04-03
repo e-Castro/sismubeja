@@ -78,7 +78,7 @@ $socio = mysqli_fetch_array($sql_soc);
                                               <?php
                                                    $f = $socio['SOC_INSTIT'];
                                                    $inst="-";
-                                                   $resultInst = exeBD("select * from instituicao where INS_COD like '$f'");
+                                                   $resultInst = exeBD("SELECT * FROM instituicao WHERE INS_COD LIKE '$f'");
                                                    if(mysqli_num_rows($resultInst) < 1) {
 	                                                  $inst;
                                                    }
@@ -107,7 +107,7 @@ $socio = mysqli_fetch_array($sql_soc);
                               <?php
                               $bd = '16.938.090/0001-04';
                               $qr = 'qr_img050j/php/qr_img.php?';
-                              $qr .= 'd=https://www.ecastro.com.br/sismubeja/socios.php?id='.$cod.'&';
+                              $qr .= 'd=https://www.sismubeja.net.br/socios.php?id='.$cod.'&';
                               $qr .= 'e=l&';
                               $qr .= 's=3&';
                               $qr .= 't=p';
