@@ -13,31 +13,13 @@
 
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-            <div class="menu_section">
-              <h3>Sócios</h3>
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-laptop"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="form_socios.php">Sócios</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="consult_socios_cod.php">Por Código</a></li>
-                      <li><a href="consult_socios_nome.php">Por Nome</a></li>
-                      <li><a href="consult_socios_mat.php">Por Matricula</a></li>
-                      <li><a href="consult_socios_cpf.php">Por CPF</a></li>
-                      <li><a href="consult_socios_cod_ant.php">Por Código_Antigo</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
               <div class="menu_section">
-              <h3>General</h3>
+                <h3>General</h3>
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-laptop"></i> Cadastros <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="form_usuarios.php">Usuários</a></li>
+                      <li><a href="form_socios.php">Sócios</a></li>
                       <li><a href="form_cargos.php">Cargos</a></li>
                       <li><a href="form_bairros.php">Bairros</a></li>
                       <li><a href="form_distritos.php">Distrito</a></li>
@@ -55,6 +37,15 @@
                   <li><a><i class="fa fa-edit"></i> Consultas/Alterações <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="consult_usuarios.php">Usuários</a></li>
+                      <li><a>Sócios<span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="consult_socios_cod.php">Por Código</a></li>
+                          <li><a href="consult_socios_nome.php">Por Nome</a></li>
+                          <li><a href="consult_socios_mat.php">Por Matricula</a></li>
+                          <li><a href="consult_socios_cpf.php">Por CPF</a></li>
+                          <li><a href="consult_socios_cod_ant.php">Por Código_Antigo</a></li>
+                        </ul>
+                      </li>
                       <li><a href="consult_cargos.php">Cargos</a></li>
                       <li><a href="consult_bairros.php">Bairros</a></li>
                       <li><a href="consult_distritos.php">Distritos</a></li>
@@ -66,12 +57,28 @@
                   </li>
                   <li><a><i class="fa fa-desktop"></i> Atendimentos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Jurídico</a></li>
-                      <li><a href="#">Presidencia</a></li>
-                      <li><a href="#">Financeiro</a></li>
-                      <li><a href="#">Relatórios</a></li>
+                      <li><a href="general_elements.html">Jurídico</a></li>
+                      <li><a href="media_gallery.html">Presidencia</a></li>
+                      <li><a href="typography.html">Financeiro</a></li>
+                      <li><a href="form_validation.html">Relatórios</a></li>
                     </ul>
                   </li>
+                  <!--<li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="tables.html">Tables</a></li>
+                      <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="chartjs.html">Chart JS</a></li>
+                      <li><a href="chartjs2.html">Chart JS2</a></li>
+                      <li><a href="morisjs.html">Moris JS</a></li>
+                      <li><a href="echarts.html">ECharts</a></li>
+                      <li><a href="other_charts.html">Other Charts</a></li>
+                    </ul>
+                  </li>-->
+
                 </ul>
               </div>
               <div class="menu_section">
@@ -79,29 +86,19 @@
                 <ul class="nav side-menu">
                   <li><a><i class="fa fa-bar-chart-o"></i> financeiro <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                    <li><a href="#">Mensalidades</a></li>
-                      <li><a href="#">Caixa</a></li>
-                      <li><a href="#">Contas a Pagar</a></li>
-                      <li><a href="#">Contas a Receber</a></li>
-                      <li><a href="#">Relatórios</a></li>
+                    <li><a href="form.html">Mensalidades</a></li>
+                      <li><a href="form.html">Caixa</a></li>
+                      <li><a href="form_advanced.html">Contas a Pagar</a></li>
+                      <li><a href="form_validation.html">Contas a Receber</a></li>
+                      <li><a href="form_validation.html">Relatórios</a></li>
                     </ul>
                   </li>
                 </ul>  
               </div>
               <div class="menu_section">
-                <h3>Administração</h3>
+                <h3>Diretoria</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-sitemap"></i>Diretoria <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#" target="blank">Presidente</a></li>
-                      <li><a href="#" target="blank">Vice-Presidente</a></li>
-                      <li><a href="#" target="blank">Tesoureiro</a></li>
-                      <li><a href="#" target="blank">Secretário Geral</a></li>
-                      <li><a href="#" target="blank">Diretoria</a></li>
-                      <li><a href="#" target="blank">Suplentes</a></li>
-                    </ul>
-                  </li>
-                  <li><a><i class="fa fa-puzzle-piece"></i>Eleições <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-clone"></i>Eleições <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="#">Iniciar Pleito</a></li>
                       <li><a href="#">Inscrição de Cahapa</a></li>
@@ -111,41 +108,42 @@
                       <li><a href="aptos_por_bairro.php" target="blank">Relatório Aptos por Bairro</a></li>
                     </ul>
                   </li>
+                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="page_403.html">403 Error</a></li>
+                      <li><a href="page_404.html">404 Error</a></li>
+                      <li><a href="page_500.html">500 Error</a></li>
+                      <li><a href="plain_page.html">Plain Page</a></li>
+                      <li><a href="login.html">Login Page</a></li>
+                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                    </ul>
+                  </li>
                 </ul>  
               </div>
               
               <div class="menu_section">
                 <h3>Tombamento</h3>
                 <ul class="nav side-menu">
-                  <li><a><i class="fa fa-laptop"></i>Cadastros <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Bens</a></li>
-                      <li><a href="#">Setores</a></li>
-                      <li><a href="#">Grupos</a></li>
-                      <li><a href="#">Responsáveis</a></li>
-                      <li><a href="#">Movimentações</a></li>
+                      <li><a href="e_commerce.html">E-commerce</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="project_detail.html">Project Detail</a></li>
+                      <li><a href="contacts.html">Contacts</a></li>
+                      <li><a href="profile.html">Profile</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-edit"></i>Consultas <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="#">Bens</a></li>
-                      <li><a href="#">Setores</a></li>
-                      <li><a href="#">Grupos</a></li>
-                      <li><a href="#">Responsáveis</a></li>
-                      <li><a href="#">Movimentações</a></li>
+                      <li><a href="page_403.html">403 Error</a></li>
+                      <li><a href="page_404.html">404 Error</a></li>
+                      <li><a href="page_500.html">500 Error</a></li>
+                      <li><a href="plain_page.html">Plain Page</a></li>
+                      <li><a href="login.html">Login Page</a></li>
+                      <li><a href="pricing_tables.html">Pricing Tables</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-graduation-cap"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">403 Error</a></li>
-                      <li><a href="#">404 Error</a></li>
-                      <li><a href="#">500 Error</a></li>
-                      <li><a href="#">Plain Page</a></li>
-                      <li><a href="#">Login Page</a></li>
-                      <li><a href="#">Pricing Tables</a></li>
-                    </ul>
-                  </li>
-                  <!--<li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                         <li><a href="#level1_1">Level One</a>
                         <li><a>Level One<span class="fa fa-chevron-down"></span></a>
@@ -161,7 +159,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li> -->                 
+                  </li>                  
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -173,13 +171,13 @@
               <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
-              <a id="goFS" data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
               </a>
               <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
               </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" href="logout.php">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
@@ -220,12 +218,12 @@
                     <span class="badge bg-red">1</span>
                   </a>
                   <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                  <li>
+                    <li>
                       <a>
                         <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
                         <span>
                           <span>José Alberto</span>
-                          <span class="time"><?php echo date('d - M');?></span>
+                          <span class="time"><?php date()?></span>
                         </span>
                         <span class="message">
                         TS.13:3 - Porque os magistrados não são motivo de temor para os que fazem o bem, mas para ...
@@ -271,7 +269,7 @@
                     <li>
                       <div class="text-center">
                         <a>
-                          <strong>Ver todas </strong>
+                          <strong>See All Alerts</strong>
                           <i class="fa fa-angle-right"></i>
                         </a>
                       </div>

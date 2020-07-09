@@ -195,7 +195,7 @@ $idp = $id;
               <a href="soc_ficha_cad.php?senha=<?php echo $cod; ?>" class="btn btn-success" target="blank"><i class="fa fa-file-text-o"></i> Ficha Cadastral </a>
             </div>
             <div class="col-md-2 col-sm-12 col-xs-12">
-              <a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank" class="btn btn-primary"><i class="fa fa-address-card"></i> Identidade Sócio </a>
+              <a href="soc_carteira.php?cod=<?php echo $cod; ?>&nome=<?php echo $nome; ?>&cpf=<?php echo $cpf; ?>&rg=<?php echo $rg; ?>&sit=<?php echo $sit; ?>&mat=<?php echo $mat; ?>" target="blank" class="btn btn-primary"><i class="fa fa-user"></i> Identidade Sócio </a>
             </div>
             <div class="col-md-2 col-sm-12 col-xs-12">
               <a href="soc_ficha_desf.php?senha=<?php echo $cod; ?>" class="btn btn-danger" target="blank"><i class="fa fa-file-text-o"></i> Ficha Desfiliação </a>

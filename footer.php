@@ -52,6 +52,15 @@
     <script src="build/js/custom.min.js"></script>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    <!--- FullScreen --->
+    <script>
+      var goFS = document.getElementById("goFS");
+      goFS.addEventListener("click", function() {
+          document.body.requestFullscreen();
+      }, false);
+    </script>
+    <!--- fim fullscreen --->
 
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});

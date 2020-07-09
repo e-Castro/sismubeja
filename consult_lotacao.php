@@ -9,7 +9,7 @@ include_once 'funcoes.php';
   <div class="">
     <div class="page-title">
       <div class="title_left">
-        <h2>Cadastro Nova Lotação</h2>
+        <h2>Editar Lotação</h2>
       </div>
         <div class="title_right">
           <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
@@ -22,7 +22,7 @@ include_once 'funcoes.php';
     </div>
       <div class="x_panel">
         <div class="x_title">
-          <h2>Lotação</h2>
+          <h2>Lotação selecionada</h2>
           <ul class="nav navbar-right panel_toolbox">
             <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
             </li>

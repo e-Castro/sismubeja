@@ -24,11 +24,12 @@ $ip = getenv("REMOTE_HOST"); // captura o ip do visitante
 </head>
 <body>
 <?php
-$cod  = $_GET['id'];
+$cod  = $_GET['cod'];
 
 $sql_soc = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
 $socio = mysqli_fetch_array($sql_soc);
 
+$foto = $socio['SOC_FOTO'];
 $nome = $socio['SOC_NOME'];
 $cpf  = $socio['SOC_CPF'];
 $rg   = $socio['SOC_RG'];
@@ -57,18 +58,20 @@ if($sit == 3 || $sit == 5){
                           </TR>
 
                           <TR>
-                              <TD align="center" valign="top"><br><img src='images/img2.png'><?php $sql = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
+                              <TD align="center" valign="top"><br><img src='images/img2.png'>
+                                      <?php $sql = exeBD("SELECT * FROM sociosb WHERE SOC_COD LIKE $cod");
                                       // Exibe as informações de cada usuário
                                       while ($usuario = mysqli_fetch_array($sql)) {
 	                                  // Exibir a foto
 	                                  echo "<img src='fotos/".$usuario['SOC_FOTO']."' width='110' height='130' alt='Foto de exibição' /><br />";
+                                      //echo "<img src='fotos/".$foto."' width='110' height='130' alt='Foto de exibição' /><br />";
                                       }?>
                                       <font size=1><b>C&Oacute;D: <?php echo $cod; ?></b></font>
                               </TD>
 
                               <TD COLSPAN=2>
                                   <TABLE>
-                                         <TR><TD></TD></TR>
+                                         <TR><TD><br></TD></TR>
                                          
                                          <TR><TD><font face="Arial" size=1><B>NOME: </B><?php echo $nome; ?>.</font></TD></TR>
                                          <TR><TD><font face="Arial" size=1></font></TD></TR>
@@ -97,7 +100,7 @@ if($sit == 3 || $sit == 5){
                                          <TR><TD></TD></TR>
                                          <TR><TD></TD></TR>
                                          <TR><TD></TD></TR>
-                                         <TR><TD></TD></TR>
+                                         <TR><TD><br><br><br><br></TD></TR>
                                   </TABLE>
                               
                           </TR>
